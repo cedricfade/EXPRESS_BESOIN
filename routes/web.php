@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[UserController::class,'Inscription'])->name('inscription');
 Route::get('/login',[UserController::class,'Login'])->name('login');
 Route::get('/dashboard',[UserController::class,'Login'])->name('login');
+route::post('login.create',[UserController::class,'store'])->name('login.create');
