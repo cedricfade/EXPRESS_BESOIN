@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[UserController::class,'Inscription'])->name('inscription');
 Route::get('/login',[UserController::class,'Login'])->name('login');
-Route::get('/dashboard',[UserController::class,'Login'])->name('login');
+Route::get('/dashboard',[DashboardController::class,'Dashboard'])->name('dashboard');
