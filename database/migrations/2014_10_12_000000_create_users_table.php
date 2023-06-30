@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('prenom');
             $table->string('contact');
             $table->string('photo')->nullable();
-            $table->string('email')->unique(); 
+            $table->string('email')->unique();
             $table->string('password');
             $table->double('status')->default(1);
             $table->rememberToken();
