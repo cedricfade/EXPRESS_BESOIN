@@ -36,18 +36,18 @@
             <div class="content-side content-side-user px-0 py-0">
               <!-- Visible only in mini mode -->
               <div class="smini-visible-block animated fadeIn px-3">
-                <img class="img-avatar img-avatar32" src="assets/media/avatars/avatar15.jpg" alt="">
+                <img class="img-avatar img-avatar32" src="{{ Storage::url(auth()->user()->photo) }}" alt="">
               </div>
               <!-- END Visible only in mini mode -->
 
               <!-- Visible only in normal mode -->
               <div class="smini-hidden text-center mx-auto">
                 <a class="img-link" href="be_pages_generic_profile.html">
-                  <img class="img-avatar" src="assets/media/avatars/avatar15.jpg" alt="">
+                  <img class="img-avatar" src="{{ Storage::url(auth()->user()->photo) }}" alt="">
                 </a>
                 <ul class="list-inline mt-3 mb-0">
                   <li class="list-inline-item">
-                    <a class="link-fx text-dual fs-sm fw-semibold text-uppercase" href="be_pages_generic_profile.html">J. Smith</a>
+                    <a class="link-fx text-dual fs-sm fw-semibold text-uppercase" href="{{ route('dashboard') }}">    <span >  {{ auth()->user()->nom }}. {{ auth()->user()->prenom }} </span></a>
                   </li>
                   <li class="list-inline-item">
                     <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
@@ -56,7 +56,7 @@
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a class="link-fx text-dual" href="op_auth_signin.html">
+                    <a class="link-fx text-dual" href="{{ route('logout') }}">
                       <i class="fa fa-sign-out-alt"></i>
                     </a>
                   </li>
@@ -83,16 +83,22 @@
                     </a>
                     <ul class="nav-main-submenu">
                       <li class="nav-main-item">
-                        <a class="nav-main-link" href="#">
+                        <a class="nav-main-link" href="{{ route('site.liste') }}">
                           <span class="nav-main-link-name">Liste des sites</span>
                         </a>
                       </li>
                       <li class="nav-main-item">
-                        <a class="nav-main-link" href="#">
+                        <a class="nav-main-link" href="{{ route('site.ajout') }}">
                           <span class="nav-main-link-name">Ajouter nouveau</span>
                         </a>
                       </li>
                     </ul>
+                </li>
+
+                <li class="nav-main-item">
+                  <a class="nav-main-link" href="{{ route('equipement') }}">
+                    <span class="nav-main-link-name p-2 text-center" style="background-color: rgb(15, 30, 160); color:#fff">Ajouter un équipement    <i class=" fa fa-plast"></i></span>
+                  </a>
                 </li>
             
           

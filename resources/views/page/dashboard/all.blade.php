@@ -11,7 +11,8 @@
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
 
-    <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/codebase.min.css') }}">
+  @include('page.link')
+
 
   </head>
 
@@ -260,12 +261,6 @@
         Core libraries and functionality
         webpack is putting everything together at assets/_js/main/app.js
     -->
-    <script src="{{ asset('assets/js/codebase.app.min.js') }}"></script>
-
-    <!-- Page JS Plugins -->
-    <script src="{{ asset('assets/js/plugins/chart.js/chart.umd.js') }}"></script>
-
-    <!-- Page JS Code -->
-    <script src="{{ asset('assets/js/pages/be_pages_dashboard.min.js') }}"></script>
+@include('page.script')
   </body>
 </html>
