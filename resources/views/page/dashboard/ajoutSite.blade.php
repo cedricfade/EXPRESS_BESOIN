@@ -47,19 +47,112 @@
       <main id="main-container">
         <!-- Page Content -->
         <div class="content">
-          <div class="row">
-            <!-- Row #1 -->
-            <div class="col-6 col-xl-3">
-              <h1>AJOUT DE SITE</h1>
-            </div>
-        
-            <!-- END Row #1 -->
-          </div>
-          <div class="row">
+            <form class="js-validation-signin" action="{{ route('site.ajout.action') }}" method="POST">
+                @csrf
+                <div class="row">
+                    <!-- Row #1 -->
+                    <div class="col-12 col-xl-12 text-center">
+                      <h1>Informations du site</h1>
+                    </div>
+                
+                    <!-- END Row #1 -->
+                  </div>
+              <div class="row">
+    
+                <div class="col-3"></div>
+                <div class="col-6">
+                    
+                <div class="form">
+    
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="login-username" name="libelle" placeholder="Enter your username" required>
+                        <label class="form-label" for="login-username">Site</label>
+                      </div>
+                      <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="login-username" name="ville" placeholder="Enter your username" required>
+                        <label class="form-label" for="login-username">Ville</label>
+                      </div>
+    
+                      <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="login-username" name="commune" placeholder="Enter your username" required>
+                        <label class="form-label" for="login-username">Commune</label>
+                      </div>
+    
+                      {{-- INFORMATION CLIM --}}
      
-            <!-- END Row #2 -->
-          </div>
-      
+                   
+                    {{-- <div class="form-floating mb-4">
+                      <input type="text" class="form-control" id="login-username" name="marque" placeholder="Enter your username" required>
+                      <label class="form-label" for="login-username">Marque</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                      <input type="text" class="form-control" id="login-password" name="modele" placeholder="Enter your password" required>
+                      <label class="form-label" for="">Modèle</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        
+                        <select id="" class="form-control" name="type_climatiseur" required>
+                            <option value="" selected hidden>Choisir</option>
+                            <option value="Climatiseur monobloc">Climatiseur Monobloc</option>
+                            <option value="Climatiseur split">Climatiseur Split</option>
+                            <option value="Climatiseur réversible">Climatiseur Réversible</option>
+                            <option value="Climatiseur mobile">Climatiseur Mobile</option>
+                            <option value="Climatiseur fixe/mural">Climatiseur Fixe/Mural</option>
+                            <option value="Climatiseur cassette">Climatiseur Cassette</option>
+    
+    
+                        </select>
+                        <label class="form-label" for="">Type de climatiseur</label>
+                      
+                      </div>
+    
+                      <div class="form-floating mb-4">
+                        <input type="number" class="form-control" id="login-password" name="puissance_electrique" placeholder="Enter your password" required>
+                        <label class="form-label" for="">Puissance électrique (kW)</label>
+                      </div>
+                      <div class="form-floating mb-4">
+                        <input type="number" class="form-control" id="login-password" name="puissance_frigorifique" placeholder="Enter your password" required>
+                        <label class="form-label" for="">Puissance frigorifique (kW)</label>
+                      </div>
+                      <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="login-username" name="local_site" placeholder="Enter your username" required>
+                        <label class="form-label" for="login-username">Local du site</label>
+                      </div> --}}
+    
+                      {{-- FIN INFORMATION CLIM --}}
+    
+                      <span id="climatiseurs">
+             
+                      </span>
+    
+                      
+    
+                      <script>
+    
+                      </script>
+                    <div class="row g-sm mb-4"> 
+                      <div class="col-12 mb-2">
+                        <button type="submit" class="btn btn-lg btn-alt-primary w-100 py-3 fw-semibold">
+                       Suivant
+                        </button>
+                      </div>
+                      <div class="col-sm-12 mb-1">
+                        <button type="reset" class="btn btn-lg w-100 py-3 text-danger fw-semibold">
+                           Réinitialiser
+                          </button>
+                      </div>
+                 
+                    </div>
+                
+    
+            </div>
+                </div>
+    
+                <div class="col-3"></div>
+         
+                <!-- END Row #2 -->
+              </div>
+            </form>
    
    
         </div>

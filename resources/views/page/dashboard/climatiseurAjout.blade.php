@@ -50,37 +50,36 @@
           <div class="row">
             <!-- Row #1 -->
             <div class="col-12 col-xl-12 text-center">
-              <h1>AJOUT DE CLIM</h1>
+              <h1>Informations du climatiseur</h1>
             </div>
         
             <!-- END Row #1 -->
           </div>
-          <form class="js-validation-signin" action="be_pages_auth_all.html" method="POST">
+          <form class="js-validation-signin" action="{{ route('climatiseur.action') }}" method="POST" enctype="multipart/form-data">
+            @csrf
           <div class="row">
+
+            @if ($errors->any())
+
+            @foreach ($errors->all() as $error)
+            {{ $error }}
+                
+            @endforeach
+                
+            @endif
 
             <div class="col-3"></div>
             <div class="col-6">
+
+           
                 
             <div class="form">
-
+                <div class="form-floating mb-4" hidden>
+                    <input type="text" class="form-control" id="login-username" name="site_id" placeholder="Enter your username" value=" {{ $site->id }}" hidden>
+                    <label class="form-label" for="login-username">site_id</label>
+                  </div>
+     
                 <div class="form-floating mb-4">
-                    <input type="text" class="form-control" id="login-username" name="site" placeholder="Enter your username" required>
-                    <label class="form-label" for="login-username">Site</label>
-                  </div>
-                  <div class="form-floating mb-4">
-                    <input type="text" class="form-control" id="login-username" name="ville" placeholder="Enter your username" required>
-                    <label class="form-label" for="login-username">Ville</label>
-                  </div>
-
-                  <div class="form-floating mb-4">
-                    <input type="text" class="form-control" id="login-username" name="commune" placeholder="Enter your username" required>
-                    <label class="form-label" for="login-username">Commune</label>
-                  </div>
-
-                  {{-- INFORMATION CLIM --}}
- 
-               
-                {{-- <div class="form-floating mb-4">
                   <input type="text" class="form-control" id="login-username" name="marque" placeholder="Enter your username" required>
                   <label class="form-label" for="login-username">Marque</label>
                 </div>
@@ -90,7 +89,7 @@
                 </div>
                 <div class="form-floating mb-4">
                     
-                    <select id="" class="form-control" name="type_climatiseur" required>
+                    <select id="" class="form-control" name="type_climatiseur" >
                         <option value="" selected hidden>Choisir</option>
                         <option value="Climatiseur monobloc">Climatiseur Monobloc</option>
                         <option value="Climatiseur split">Climatiseur Split</option>
@@ -110,25 +109,31 @@
                     <label class="form-label" for="">Puissance électrique (kW)</label>
                   </div>
                   <div class="form-floating mb-4">
-                    <input type="number" class="form-control" id="login-password" name="puissance_electrique" placeholder="Enter your password" required>
+                    <input type="number" class="form-control" id="login-password" name="puissance_frigorifique" placeholder="Enter your password" required>
                     <label class="form-label" for="">Puissance frigorifique (kW)</label>
                   </div>
+
                   <div class="form-floating mb-4">
-                    <input type="text" class="form-control" id="login-username" name="local_site" placeholder="Enter your username" required>
-                    <label class="form-label" for="login-username">Local du site</label>
-                  </div> --}}
+                    <input type="file" class="form-control" id="login-password"  placeholder="Enter your password" name="photo" required>
+                    <label class="form-label" for="">Image étiquette</label>
+                  </div>
+                
 
                   {{-- FIN INFORMATION CLIM --}}
 
+                  <span id="climatiseurs">
+         
+                  </span>
 
+                  
 
                   <script>
-                    
+
                   </script>
                 <div class="row g-sm mb-4"> 
                   <div class="col-12 mb-2">
                     <button type="submit" class="btn btn-lg btn-alt-primary w-100 py-3 fw-semibold">
-                     Sauvegarder
+                   Sauvegarder
                     </button>
                   </div>
                   <div class="col-sm-12 mb-1">
@@ -148,7 +153,34 @@
             <!-- END Row #2 -->
           </div>
         </form>
-      
+
+
+ 
+         
+       
+             
+            {{-- <input type="submit" value="valider" name="valider"> --}}
+             
+        
+            {{-- <button onClick="champ()">ajouter un champ</button> --}}
+            {{-- <script type="text/javascript">
+ 
+                var i = 1;
+                 
+                function champ() {
+                 
+                i += 1;
+                     
+                var addfield = 
+                ' <span style="float:right">Ajout de Climatiseur</span> <br> <div class="form-floating mb-4"><input type="text" class="form-control" id="login-username" name="marque" placeholder="Enter your username" required> <label class="form-label" for="login-username">Marque</label></div> <div class="form-floating mb-4"><input type="text" class="form-control" id="login-password" name="modele" placeholder="Enter your password" required><label class="form-label" for="">Modèle</label></div> <div class="form-floating mb-4"><select id="" class="form-control" name="type_climatiseur" required> <option value="" selected hidden>Choisir</option><option value="Climatiseur monobloc">Climatiseur Monobloc</option><option value="Climatiseur split">Climatiseur Split</option><option value="Climatiseur réversible">Climatiseur Réversible</option><option value="Climatiseur mobile">Climatiseur Mobile</option><option value="Climatiseur fixe/mural">Climatiseur Fixe/Mural</option><option value="Climatiseur cassette">Climatiseur Cassette</option> </select><label class="form-label" for="">Type de climatiseur</label> </div>' ;
+                 
+                 
+                document.getElementById('climatiseurs').innerHTML +=addfield;
+                     
+                }
+                 
+                </script>
+       --}}
    
    
         </div>
@@ -172,5 +204,10 @@
         webpack is putting everything together at assets/_js/main/app.js
     -->
 @include('page.script')
+
+<script>
+ Swal.fire('Any fool can use a computer')
+
+</script>
   </body>
 </html>
