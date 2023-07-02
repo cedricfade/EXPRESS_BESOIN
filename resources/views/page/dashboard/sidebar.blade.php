@@ -1,4 +1,4 @@
-   <nav id="sidebar">
+   <nav id="sidebar" class="">
         <!-- Sidebar Content -->
         <div class="sidebar-content">
           <!-- Side Header -->
@@ -75,11 +75,33 @@
                     <span class="nav-main-link-name">Tableau de bord</span>
                   </a>
                 </li>
-                <li class="nav-main-heading">Sites</li>
+                <li class="nav-main-heading" >CLIMATISEUR</li>
+             
                 <li class="nav-main-item">
                     <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                      <i class="nav-main-link-icon fa fa-grip-vertical"></i>
-                      <span class="nav-main-link-name">Sites</span>
+                      <img src="{{ asset('assets/anim icon/75551-air-conditioner.gif') }}" alt="" class="nav-main-link-icon " style="width: 4px">
+                      <span class="nav-main-link-name">Climatiseur</span>
+                    </a>
+                    <ul class="nav-main-submenu">
+                      <li class="nav-main-item">
+                        <a class="nav-main-link" href="{{ route('site.liste') }}">
+                          <span class="nav-main-link-name">Liste des sites</span>
+                        </a>
+                      </li>
+                      <li class="nav-main-item">
+                        <a class="nav-main-link" href="{{ route('site.climatiseur.ajout') }}">
+                          <span class="nav-main-link-name">Ajouter nouveau</span>
+                        </a>
+                      </li>
+                    </ul>
+                </li>
+
+                <li class="nav-main-heading">LAMPE</li>
+             
+                <li class="nav-main-item">
+                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                     <img src="{{ asset('assets/anim icon/28059-lamp-light.gif') }}" alt="" class="nav-main-link-icon " style="width: 4px">
+                      <span class="nav-main-link-name">Lampe</span>
                     </a>
                     <ul class="nav-main-submenu">
                       <li class="nav-main-item">
@@ -95,11 +117,12 @@
                     </ul>
                 </li>
 
-                <li class="nav-main-item">
+
+                {{-- <li class="nav-main-item">
                   <a class="nav-main-link" href="{{ route('equipement') }}">
                     <span class="nav-main-link-name p-2 text-center" style="background-color: rgb(15, 30, 160); color:#fff">Ajouter un équipement    <i class=" fa fa-plast"></i></span>
                   </a>
-                </li>
+                </li> --}}
             
           
              

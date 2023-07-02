@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\climatiseur;
 use App\Models\Site;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -11,7 +12,17 @@ class SiteController extends Controller
     
     public function siteListe(){
 
-        return view('page.dashboard.site');
+
+        // $sites = Site::where('user_id', auth()->user()->id)->get()->sortDesc();
+
+        $sites = Site::all(); 
+        // $sites = Site::with('climatiseurs')->find($site_id);
+
+    
+        $climatiseurs = climatiseur::all();
+       
+
+        return view('page.dashboard.site', compact('sites', 'climatiseurs'));
     }
 
     public function Ajoutsite(){
@@ -32,7 +43,7 @@ class SiteController extends Controller
        
 
 
-        return redirect()->route('site.view');
+        return redirect()->route('site.climatiseur.view');
       
         
 
@@ -41,7 +52,8 @@ class SiteController extends Controller
 
 
     public function siteView(){
-        $sites = Site::where('user_id',auth()->user()->id)->get();
+        $sites = Site::where('user_id',auth()->user()->id)->get()->sortDesc();
+ 
 
 
         return view('page.dashboard.siteview', compact('sites'));
@@ -50,5 +62,8 @@ class SiteController extends Controller
 
   
 
+    public function LampeListe(){
+        return view('page.dashboard.site');
+    }
   
 }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class climatiseur extends Model
 {
     use HasFactory;
-
+  
 
     public function site(){
 

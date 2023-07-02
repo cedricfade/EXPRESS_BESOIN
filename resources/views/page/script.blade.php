@@ -1,3 +1,6 @@
+
+
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 <script src="{{ asset('assets/js/codebase.app.min.js') }}"></script>
 
 <!-- Page JS Plugins -->
@@ -11,3 +14,12 @@
 
 <!-- Page JS Code -->
 <script src="{{ asset('assets/js/pages/op_auth_signup.min.js') }}"></script>
+
+{{-- DATA TABLE --}}
+<script src="{{ asset('assets/datatable/jquery-3.5.1.js') }}"></script>
+<script src="{{ asset('assets/datatable/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/datatable/dataTables.bootstrap5.min.js') }}"></script>
+
+<script>
+  $('#example').DataTable();
+</script>

@@ -7,11 +7,18 @@
 
     <title>TABLEAU DE BORD</title>
 
-    <meta name="description" content="Codebase - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
 
   @include('page.link')
+
+
+
+
+
+  
+  
 
 
   </head>
@@ -57,12 +64,55 @@
         
             <!-- END Row #1 -->
           </div>
-          <div class="row">
-     
-            <!-- END Row #2 -->
-          </div>
+
+         
+
       
-   
+
+
+
+          <table id="example" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Libelle</th>
+                    <th>Ville</th>
+                    <th>Commune</th>
+                    <th>Nombre climatiseur</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+              
+
+              @foreach ($sites as $site)
+
+              <tr>
+                <td style="text-transform: uppercase">{{ $site->libelle }}</td>
+                <td style="text-transform: uppercase">{{ $site->ville }}</td>
+                <td style="text-transform: uppercase">{{ $site->commune }}</td>
+                <td>
+                  {{ $site->climatiseur->count()}}
+                 
+                </td>
+          
+            </tr>
+
+                  
+              @endforeach
+               
+               
+            </tbody>
+            <tfoot>
+                <tr>
+                  <th>Libelle</th>
+                  <th>Ville</th>
+                  <th>Commune</th>
+                  <th>Nombre climatiseur</th>
+            
+                </tr>
+            </tfoot>
+        </table>
+     
    
         </div>
         <!-- END Page Content -->
@@ -84,6 +134,10 @@
         Core libraries and functionality
         webpack is putting everything together at assets/_js/main/app.js
     -->
+
+
 @include('page.script')
+
+
   </body>
 </html>
