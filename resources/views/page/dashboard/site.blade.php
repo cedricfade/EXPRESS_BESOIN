@@ -35,11 +35,11 @@
         Adding .smini-visible to an element will show it only when the sidebar is in mini mode
         Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
       -->
-   
+
       {{-- SIDEBAR --}}
       @include('page.dashboard.sidebar')
       <!-- Header -->
-  
+
       @include('page.dashboard.header')
       <!-- END Header -->
 
@@ -53,17 +53,18 @@
               <h1>LISTE DES SITES</h1>
             </div>
 
+
             <img src="https://lottiefiles.com/28059-lamp-light" alt="">
-        
+
             <!-- END Row #1 -->
           </div>
           <div class="row">
-     
+
             <!-- END Row #2 -->
           </div>
-      
-   
-   
+
+
+
         </div>
         <!-- END Page Content -->
       </main>
