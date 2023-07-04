@@ -84,7 +84,7 @@
                     </a>
                     <ul class="nav-main-submenu">
                       <li class="nav-main-item">
-                        <a class="nav-main-link" href="{{ route('site.liste') }}">
+                        <a class="nav-main-link" href="{{ route('site.clim.list') }}">
                           <span class="nav-main-link-name">Liste des sites</span>
                         </a>
                       </li>

@@ -34,8 +34,24 @@ class SiteClimatiseurController extends Controller
 
     }
 
+
+    public function siteclimatiseur(){
+
+          $sites = Site::where('user_id', auth()->user()->id)->get()->sortDesc();
+
+        //   $sites = Site::all(); 
+          // $sites = Site::with('climatiseurs')->find($site_id);
+  
+      
+          $climatiseurs = climatiseur::all();
+
+
+          return view('page.dashboard.climatisseur.siteList',compact('sites','climatiseurs'));
+
+
+    }
     public function SiteClimatiseurView(){
-        $sites = Site::where('user_id',auth()->user()->id)->get()->sortDesc();
+        $sites = Site::where('user_id',auth()->user()->id)->get()->sortDesidesc();
 
 
         return view('page.dashboard.climatisseur.SiteClimatiseurView', compact('sites'));
@@ -44,9 +60,19 @@ class SiteClimatiseurController extends Controller
 
 
 // CLIMATISEUR
+public function ClimatiseurInfos($id){
+
+    $site = Site::findOrFail($id);
+    $climatiseurs = climatiseur::all();
+
+    return view('page.dashboard.climatisseur.ClimInfos',compact('site','climatiseurs'));
 
 
-    public function Climatiseur($id){
+}
+
+
+
+      public function Climatiseur($id){
 
         $site = Site::findOrFail($id);
 

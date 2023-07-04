@@ -36,8 +36,8 @@ route::post('inscription.create',[UserController::class,'inscriptionAction'])->n
 
 
 // Route::get('/equipement',[AjoutComposantController::class,'equipement'])->name('equipement');
-// // Route::get('/climatiseur/{id}',[AjoutComposantController::class,'Climatiseur'])->name('climatiseur.ajout');
-// Route::post('/climatiseur.action',[AjoutComposantController::class,'ClimatiseurAction'])->name('climatiseur.action');
+// Route::get('/climatiseur/{id}',[AjoutComposantController::class,'Climatiseur'])->name('climatiseur.ajout');
+
 
 
 
@@ -49,9 +49,17 @@ Route::get('/site/ajout',[SiteController::class,'Ajoutsite'])->name('site.ajout'
 Route::post('/traitement.site',[SiteController::class,'AjoutsiteAction'])->name('site.ajout.action');
 
 
+// CLIMATISEUR ET SITE
+
+// site ajout
 Route::get('/site/climatiseur/new',[SiteClimatiseurController::class,'SiteClimatiseurAjout'])->name('site.climatiseur.ajout');
 Route::post('/site/climatiseur/traitement',[SiteClimatiseurController::class,'SiteClimatiseurTraitement'])->name('site.climatiseur.traitement');
-Route::get('/climatiseur/{id}',[SiteClimatiseurController::class,'Climatiseur'])->name('climatiseur.ajout');
-
 Route::get('/site/climatiseur/view',[SiteClimatiseurController::class,'SiteClimatiseurView'])->name('site.climatiseur.view');
-Route::get('/site/climatiseur',[SiteClimatiseurController::class,'siteclimatiseur'])->name('site.climatiseur');
+Route::get('/site/climatiseur',[SiteClimatiseurController::class,'siteclimatiseur'])->name('site.clim.list');
+
+Route::get('/climatiseur/{id}',[SiteClimatiseurController::class,'Climatiseur'])->name('climatiseur.ajout');
+Route::post('/climatiseur.action',[SiteClimatiseurController::class,'ClimatiseurAction'])->name('climatiseur.action');
+
+Route::get('/climatiseur/infos/{id}/{libelle}',[SiteClimatiseurController::class,'ClimatiseurInfos'])->name('climatiseur.infos');
+
+
