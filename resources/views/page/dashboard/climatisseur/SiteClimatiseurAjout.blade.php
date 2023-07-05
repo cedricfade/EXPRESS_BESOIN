@@ -65,17 +65,17 @@
                 <div class="form">
     
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control" id="login-username" name="libelle" placeholder="Enter your username" required>
-                        <label class="form-label" for="login-username">Site</label>
+                        <input type="text" class="form-control" id="login-username" name="libelle" placeholder="Enter your username" style="text-transform: capitalize" required>
+                        <label class="form-label" for="login-username" >Site</label>
                       </div>
                       <div class="form-floating mb-4">
-                        <input type="text" class="form-control" id="login-username" name="ville" placeholder="Enter your username" required>
-                        <label class="form-label" for="login-username">Ville</label>
+                        <input type="text" class="form-control" id="login-username" name="ville" placeholder="Enter your username" style="text-transform: capitalize" required>
+                        <label class="form-label" for="login-username" >Ville</label>
                       </div>
     
                       <div class="form-floating mb-4">
-                        <input type="text" class="form-control" id="login-username" name="commune" placeholder="Enter your username" required>
-                        <label class="form-label" for="login-username">Commune</label>
+                        <input type="text" class="form-control" id="login-username" name="commune" placeholder="Enter your username" style="text-transform: capitalize" required>
+                        <label class="form-label" for="login-username" >Commune</label>
                       </div>
     
                       {{-- INFORMATION CLIM --}}

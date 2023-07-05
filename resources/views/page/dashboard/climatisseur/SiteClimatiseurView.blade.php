@@ -51,16 +51,23 @@
                 <div class="row">
                     <!-- Row #1 -->
                     <div class="col-12 col-xl-12 text-center">
-                      <h1>Informations du site</h1>
+                      <h1>Liste des sites ajoutés</h1>
                     </div>
                 
                     <!-- END Row #1 -->
                   </div>
+              
+                  <br>
+           
+
+                 
               <div class="row">
+                 
+              
               
                     @foreach ($sites as $site)
-                  
-                    
+
+                 
                     <div class="col-md-6 col-xl-3">
                         <a class="block block-rounded text-center" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}">
                           <div class="block-content block-content-full block-content-sm bg-primary">
@@ -81,10 +88,15 @@
                             </div>
                           </div>
                         </a>
+
+                    
+
+                  
                         <a type="submit" class="btn btn-lg btn-alt-primary w-100 py-3 fw-semibold" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}">
-                            Suivant
-                        </a>
-                      
+                      Ajouter climatiseur
+                      </a>
+
+                    
                       </div>
                     
                      
@@ -121,5 +133,41 @@
         webpack is putting everything together at assets/_js/main/app.js
     -->
 @include('page.script')
+<style>
+  .swal2-popup {
+    max-height: 300px !important;
+    max-width: 300px !important;
+  }
+  .swal2-icon {
+    font-size: 10px !important;
+  }
+  
+  .swal2-title {
+    max-height: 70px;
+    font-size: 17px !important
+  }
+  
+  .swal2-confirm {
+    background: #3aa9a9 !important;
+  }
+  </style>
+<script>
+@if (session('site_add'))
+  
+
+  Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: "{{ session('site_add') }}",
+  showConfirmButton: false,
+  timer: 2500,
+
+})
+@endif
+  
+
+
+
+</script>
   </body>
 </html>

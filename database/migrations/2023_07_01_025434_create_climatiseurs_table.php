@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('climatiseurs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
             $table->foreignId('site_id')->constrained();
             $table->string('marque');
             $table->string('type_climatiseur');

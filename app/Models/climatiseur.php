@@ -14,4 +14,9 @@ class climatiseur extends Model
 
         return $this->belongsTo(Site::class);
     }
+
+    // public function site(){
+
+    //     return $this->hasMany(Site::class);
+    // }
 }

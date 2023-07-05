@@ -23,3 +23,18 @@
 <script>
   $('#example').DataTable();
 </script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+  jQuery(document).ready(function($) {
+      $('.counter').counterUp({
+          delay: 10,
+          time: 500
+      });
+  });
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js  "></script>

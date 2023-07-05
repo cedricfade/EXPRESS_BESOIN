@@ -97,4 +97,7 @@ class UserController extends Controller
     return redirect()->route('login')->with('login','Compte créer avec succès');
 
      }
+
+
+     
 }

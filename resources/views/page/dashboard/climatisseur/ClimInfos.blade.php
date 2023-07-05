@@ -17,7 +17,20 @@
 
 
 
+  <style>
+    .ma-table tr{
+     line-height: 2.3em;
+
+     padding-left: 15px !important
   
+   
+    }
+
+    .ma-table td{
+   
+     
+    }
+  </style>
   
 
 
@@ -57,32 +70,78 @@
           <div class="row">
             <!-- Row #1 -->
             <div class="col-6 col-xl-12">
+                <a class="block block-link-pop text-center" href="javascript:void(0)">
+                    <div class="block-content">
+                      <p class="fs-1 text-warning">
+                        <strong class="counter">{{ $site->climatiseur->count() }}</strong>
+                      </p>
+                      <p class="fw-medium">
+                        Climatiseur(s)
+                      </p>
+                    </div>
+                  </a>
                 <h3><i class="fa fa-map-pin" style="font-size: 22px"></i> {{ $site->libelle }}</h3>
+                
             </div>
 
+            @forelse ($climatiseurs as $climatiseur)
             <div class="col-xl-6">
-                <div class="block block-rounded">
-                    <div class="block-header block-header-default">
-                      <h3 class="block-title">Title <small>Subtitle</small></h3>
-                      <div class="block-options">
-                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="fullscreen_toggle"></button>
-                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="pinned_toggle">
-                          <i class="si si-pin"></i>
-                        </button>
-                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                          <i class="si si-refresh"></i>
-                        </button>
-                        {{-- <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button> --}}
-                        {{-- <button type="button" class="btn-block-option" data-toggle="block-option" data-action="close">
-                          <i class="si si-close"></i>
-                        </button> --}}
-                      </div>
+              
+              <div class="block block-rounded">
+                  <div class="block-header block-header-default">
+                    <h3 class="block-title">Climatiseur <small>({{ $climatiseur->marque }})</small></h3>
+                    <div class="block-options">
+                      <button type="button" class="btn-block-option" data-toggle="block-option" data-action="fullscreen_toggle"></button>
+                      <button type="button" class="btn-block-option" data-toggle="block-option" data-action="pinned_toggle">
+                        <i class="si si-pin"></i>
+                      </button>
+                      <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                        <i class="si si-refresh"></i>
+                      </button>
+                      {{-- <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button> --}}
+                      {{-- <button type="button" class="btn-block-option" data-toggle="block-option" data-action="close">
+                        <i class="si si-close"></i>
+                      </button> --}}
+                    </div>
+          </div>
+          <div class="block-content">
+             <table class="ma-table">
+              <tr>
+                  <th>Marque : </th>
+              <td>{{ $climatiseur->marque }} </td>
+              </tr>
+             <tr>
+              <th style="text-transform: capitalize">Type climatiseur : </th>
+              <td style="text-transform: capitalize">{{ $climatiseur->type_climatiseur }}</td>
+             </tr>
+             <tr>
+              <th style="text-transform: capitalize">Chevaux : </th>
+              <td style="text-transform: capitalize">{{ $climatiseur->chevaux }} Cv</td>
+             </tr>
+             <tr>
+              <th style="text-transform: capitalize">Puissance en Kw : </th>
+              <td style="text-transform: capitalize">{{ $climatiseur->sommes_chevaux }} kw</td>
+             </tr>
+
+            
+             
+             </table>
+             <figure>
+            <a href="{{ Storage::url($climatiseur->photo) }}" > <img src="{{ Storage::url($climatiseur->photo) }}" alt=""  height="80px" width="20%" style="padding:5px; border: 1px solid"></a>
+      
+            </figure>
             </div>
-            <div class="block-content">
-                <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
               </div>
-                </div>
-            </div>
+          </div>
+                
+            @empty
+               <div class="col-xl-12 bg-info p-3 text-light text-center">
+                <span style="font-size: 1.3em">Vous n'avez pas de climatiseur disponible !</span>
+
+               </div>
+            @endforelse
+
+          
 
           
         

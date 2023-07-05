@@ -57,16 +57,17 @@
           </div>
           <form class="js-validation-signin" action="{{ route('climatiseur.action') }}" method="POST" enctype="multipart/form-data">
             @csrf
-          <div class="row">
-
             @if ($errors->any())
 
             @foreach ($errors->all() as $error)
-            {{ $error }}
+            <span class="bg-danger p-3">{{ $error }}</span>
                 
             @endforeach
                 
             @endif
+          <div class="row">
+
+          
 
             <div class="col-3"></div>
             <div class="col-6">
@@ -105,16 +106,13 @@
                   </div>
 
                   <div class="form-floating mb-4">
-                    <input type="name" class="form-control" id="login-password" name="puissance_electrique" placeholder="Enter your password" required>
-                    <label class="form-label" for="">Puissance électrique (kW)</label>
+                    <input type="name" class="form-control" id="login-password" name="chevaux" placeholder="Enter your password" required>
+                    <label class="form-label" for="">Nombre de chevaux</label>
                   </div>
-                  <div class="form-floating mb-4">
-                    <input type="name" class="form-control" id="login-password" name="puissance_frigorifique" placeholder="Enter your password" required>
-                    <label class="form-label" for="">Puissance frigorifique (kW)</label>
-                  </div>
+              
 
                   <div class="form-floating mb-4">
-                    <input type="file" class="form-control" id="login-password"  placeholder="Enter your password" name="photo" required>
+                    <input type="file" class="form-control" id="login-password"  placeholder="Enter your password" name="photo">
                     <label class="form-label" for="">Image étiquette</label>
                   </div>
                 
