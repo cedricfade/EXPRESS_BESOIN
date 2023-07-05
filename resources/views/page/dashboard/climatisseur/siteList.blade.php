@@ -17,8 +17,8 @@
 
 
 
-
-
+  
+  
 
 
   </head>
@@ -42,11 +42,11 @@
         Adding .smini-visible to an element will show it only when the sidebar is in mini mode
         Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
       -->
-
+   
       {{-- SIDEBAR --}}
       @include('page.dashboard.sidebar')
       <!-- Header -->
-
+  
       @include('page.dashboard.header')
       <!-- END Header -->
 
@@ -60,15 +60,14 @@
               <h1>LISTE DES SITES</h1>
             </div>
 
-
             <img src="https://lottiefiles.com/28059-lamp-light" alt="">
-
+        
             <!-- END Row #1 -->
           </div>
 
+         
 
-
-
+      
 
 
 
@@ -79,11 +78,12 @@
                     <th>Ville</th>
                     <th>Commune</th>
                     <th>Nombre climatiseur</th>
-
+                    <th>Action</th>
+                   
                 </tr>
             </thead>
             <tbody>
-
+              
 
               @foreach ($sites as $site)
 
@@ -93,15 +93,18 @@
                 <td style="text-transform: uppercase">{{ $site->commune }}</td>
                 <td>
                   {{ $site->climatiseur->count()}}
-
+                 
                 </td>
-
+                <td>
+                    <a href="{{ route('climatiseur.infos',['id'=>$site->id,'libelle'=>Str::slug($site->libelle)]) }}">Voir <i class="fa fa-eye"></i></a>
+                </td>
+          
             </tr>
 
-
+                  
               @endforeach
-
-
+               
+               
             </tbody>
             <tfoot>
                 <tr>
@@ -109,12 +112,12 @@
                   <th>Ville</th>
                   <th>Commune</th>
                   <th>Nombre climatiseur</th>
-
+            
                 </tr>
             </tfoot>
         </table>
-
-
+     
+   
         </div>
         <!-- END Page Content -->
       </main>

@@ -35,72 +35,71 @@
         Adding .smini-visible to an element will show it only when the sidebar is in mini mode
         Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
       -->
-
+   
       {{-- SIDEBAR --}}
       @include('page.dashboard.sidebar')
       <!-- Header -->
-
+  
       @include('page.dashboard.header')
       <!-- END Header -->
 
       <!-- Main Container -->
       <main id="main-container">
         <!-- Page Content -->
-        <br><br><br><br>
         <div class="content">
-          <div class="row">
-            <!-- Row #1 -->
-            <div class="col-12 col-xl-12 text-center">
-              <h1>Que voulez-vous ajouter?</h1>
-              <br><br>
+          
+                <div class="row">
+                    <!-- Row #1 -->
+                    <div class="col-12 col-xl-12 text-center">
+                      <h1>Informations du site</h1>
+                    </div>
+                
+                    <!-- END Row #1 -->
+                  </div>
+              <div class="row">
+              
+                    @foreach ($sites as $site)
+                  
+                    
+                    <div class="col-md-6 col-xl-3">
+                        <a class="block block-rounded text-center" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}">
+                          <div class="block-content block-content-full block-content-sm bg-primary">
+                            <span class="fw-semibold text-white" style="text-transform: capitalize">{{ $site->libelle }}</span>
+                          </div>
+                       
+                          <div class="block-content">
+                            <div class="row items-push text-center">
+                              <div class="col-12">
+                                <div class="mb-1"><i class="si si-map fa-2x text-primary"></i></div>
+                                {{ $site->ville }} |  {{ $site->commune }}
+                                <div class="fs-sm text-muted"></div>
+                              </div>
+                              {{-- <div class="col-6">
+                                <div class="mb-1"><i class="si si-wallet fa-2x text-primary"></i></div>
+                                <div class="fs-sm text-muted"></div>
+                              </div> --}}
+                            </div>
+                          </div>
+                        </a>
+                        <a type="submit" class="btn btn-lg btn-alt-primary w-100 py-3 fw-semibold" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}">
+                            Suivant
+                        </a>
+                      
+                      </div>
+                    
+                     
+                        
+                    @endforeach
+                
+                  
+                
+                   
             </div>
-
-
-            <!-- END Row #1 -->
-          </div>
-          <div class="row">
-
-            <div class="col-md-4">
-                <a href="#">
-                    <div class="block block-rounded" style="border:1px solid">
-                        <div class="block-content block-content-full">
-                          <div class="py-3 text-center">
-                            <div class="mb-3">
-                              <img src="{{ asset('assets/anim icon/28059-lamp-light.gif') }}" alt="">
-                            </div>
-                            <div class="fs-4 fw-semibold">LAMPE</div>
-                            <div class="text-muted"></div>
-                            <div class="pt-3">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </a>
-              </div>
-              <div class="col-2"></div>
-
-              <div class="col-md-4">
-                <a href="{{ route('site.ajout') }}">
-                    <div class="block block-rounded" style="border:1px solid">
-                        <div class="block-content block-content-full">
-                          <div class="py-3 text-center">
-                            <div class="mb-3">
-                              <img src="{{ asset('assets/anim icon/75551-air-conditioner.gif') }}" alt="" height="148">
-                            </div>
-                            <div class="fs-4 fw-semibold">CLIMATISEUR</div>
-                            <div class="text-muted"></div>
-                            <div class="pt-3">
-
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </a>
-              </div>
-          </div>
-
-
-
+                </div>
+    
+        
+   
+   
         </div>
         <!-- END Page Content -->
       </main>

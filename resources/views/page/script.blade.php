@@ -1,3 +1,6 @@
+
+
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 <script src="{{ asset('assets/js/codebase.app.min.js') }}"></script>
 
 <!-- Page JS Plugins -->

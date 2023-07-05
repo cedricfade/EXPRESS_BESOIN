@@ -17,13 +17,13 @@
 
 
 
-
-
+  
+  
 
 
   </head>
 
-  <body>
+  <body style="background: #ececec">
 
     <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-modern main-content-boxed">
       <!-- Side Overlay-->
@@ -42,11 +42,11 @@
         Adding .smini-visible to an element will show it only when the sidebar is in mini mode
         Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
       -->
-
+   
       {{-- SIDEBAR --}}
       @include('page.dashboard.sidebar')
       <!-- Header -->
-
+  
       @include('page.dashboard.header')
       <!-- END Header -->
 
@@ -56,65 +56,45 @@
         <div class="content">
           <div class="row">
             <!-- Row #1 -->
-            <div class="col-6 col-xl-3">
-              <h1>LISTE DES SITES</h1>
+            <div class="col-6 col-xl-12">
+                <h3><i class="fa fa-map-pin" style="font-size: 22px"></i> {{ $site->libelle }}</h3>
             </div>
 
+            <div class="col-xl-6">
+                <div class="block block-rounded">
+                    <div class="block-header block-header-default">
+                      <h3 class="block-title">Title <small>Subtitle</small></h3>
+                      <div class="block-options">
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="fullscreen_toggle"></button>
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="pinned_toggle">
+                          <i class="si si-pin"></i>
+                        </button>
+                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                          <i class="si si-refresh"></i>
+                        </button>
+                        {{-- <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button> --}}
+                        {{-- <button type="button" class="btn-block-option" data-toggle="block-option" data-action="close">
+                          <i class="si si-close"></i>
+                        </button> --}}
+                      </div>
+            </div>
+            <div class="block-content">
+                <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+              </div>
+                </div>
+            </div>
 
-            <img src="https://lottiefiles.com/28059-lamp-light" alt="">
-
+          
+        
             <!-- END Row #1 -->
-          </div>
+ 
+         
 
 
 
 
 
-
-
-          <table id="example" class="table table-striped" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Libelle</th>
-                    <th>Ville</th>
-                    <th>Commune</th>
-                    <th>Nombre climatiseur</th>
-
-                </tr>
-            </thead>
-            <tbody>
-
-
-              @foreach ($sites as $site)
-
-              <tr>
-                <td style="text-transform: uppercase">{{ $site->libelle }}</td>
-                <td style="text-transform: uppercase">{{ $site->ville }}</td>
-                <td style="text-transform: uppercase">{{ $site->commune }}</td>
-                <td>
-                  {{ $site->climatiseur->count()}}
-
-                </td>
-
-            </tr>
-
-
-              @endforeach
-
-
-            </tbody>
-            <tfoot>
-                <tr>
-                  <th>Libelle</th>
-                  <th>Ville</th>
-                  <th>Commune</th>
-                  <th>Nombre climatiseur</th>
-
-                </tr>
-            </tfoot>
-        </table>
-
-
+   
         </div>
         <!-- END Page Content -->
       </main>

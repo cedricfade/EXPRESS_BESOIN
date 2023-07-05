@@ -47,7 +47,7 @@
       <main id="main-container">
         <!-- Page Content -->
         <div class="content">
-            <form class="js-validation-signin" action="{{ route('site.ajout.action') }}" method="POST">
+            <form class="js-validation-signin" action="{{ route('site.climatiseur.traitement') }}" method="POST">
                 @csrf
                 <div class="row">
                     <!-- Row #1 -->

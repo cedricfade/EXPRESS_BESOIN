@@ -37,21 +37,21 @@
           </div>
           <div class="hero-static col-md-6 col-xl-4 d-flex align-items-center bg-body-extra-light">
             <div class="content content-full">
-     
+
               <!-- Header -->
               <div class="px-4 py-2 mb-4">
                 <a class="link-fx fw-bold" href="index.html">
              @if (session('login'))
 
              <div class="bg"style="background: rgb(6, 136, 27); color: #fff">{{ session('login') }}</div>
-                 
+
              @endif
-           
 
 
-           
+
+
                   <i class="fa fa-fire"></i>
-                  
+
                   <span class="fs-4 text-body-color">Lynays</span><span class="fs-4">Entreprises</span>
                 </a>
                 <h1 class="h3 fw-bold mt-4 mb-2">Connexion au Dashboard</h1>
@@ -59,7 +59,7 @@
                 @if (session('login_erreur'))
 
                 <span class="bg col-12"style="background: red; color: #fff">{{ session('login_erreur') }}</span>
-                    
+
                 @endif
               </div>
               <!-- END Header -->
@@ -95,6 +95,7 @@
                       Mot de passe oublié
                     </a>
                   </div>
+
                 </div>
               </form>
               <!-- END Sign In Form -->
