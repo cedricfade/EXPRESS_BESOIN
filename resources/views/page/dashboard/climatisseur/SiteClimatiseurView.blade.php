@@ -16,9 +16,9 @@
 
   </head>
 
-  <body>
+  <body class="">
 
-    <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-modern main-content-boxed">
+    <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-modern main-content-boxed ">
       <!-- Side Overlay-->
 
       <!-- END Side Overlay -->
@@ -44,14 +44,14 @@
       <!-- END Header -->
 
       <!-- Main Container -->
-      <main id="main-container">
+      <main id="main-container" class="animate__animated animate__bounceInRight">
         <!-- Page Content -->
         <div class="content">
           
                 <div class="row">
                     <!-- Row #1 -->
                     <div class="col-12 col-xl-12 text-center">
-                      <h1>Liste des sites ajoutés</h1>
+                      <h2>Sites récemment ajoutés</h2>
                     </div>
                 
                     <!-- END Row #1 -->
@@ -68,7 +68,7 @@
                     @foreach ($sites as $site)
 
                  
-                    <div class="col-md-6 col-xl-3">
+                    <div class="col-md-3 col-xl-3 pb-2 col-6 col-lg-3 col-sm-4 mx-auto">
                         <a class="block block-rounded text-center" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}">
                           <div class="block-content block-content-full block-content-sm bg-primary">
                             <span class="fw-semibold text-white" style="text-transform: capitalize">{{ $site->libelle }}</span>
@@ -78,7 +78,7 @@
                             <div class="row items-push text-center">
                               <div class="col-12">
                                 <div class="mb-1"><i class="si si-map fa-2x text-primary"></i></div>
-                                {{ $site->ville }} |  {{ $site->commune }}
+                                <span style="text-transform: capitalize">{{ $site->ville }} |  {{ $site->commune }}</span>
                                 <div class="fs-sm text-muted"></div>
                               </div>
                               {{-- <div class="col-6">

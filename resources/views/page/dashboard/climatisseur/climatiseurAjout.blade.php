@@ -44,13 +44,13 @@
       <!-- END Header -->
 
       <!-- Main Container -->
-      <main id="main-container">
+      <main id="main-container" class="animate__animated animate__bounceInRight">
         <!-- Page Content -->
         <div class="content">
           <div class="row">
             <!-- Row #1 -->
             <div class="col-12 col-xl-12 text-center">
-              <h1>Informations du climatiseur</h1>
+              <h2>Informations du climatiseur</h2>
             </div>
         
             <!-- END Row #1 -->
@@ -69,8 +69,8 @@
 
           
 
-            <div class="col-3"></div>
-            <div class="col-6">
+     
+            <div class="col-xl-5 col-md-5 col-lg-5 col-10 mx-auto">
 
            
                 
@@ -146,7 +146,7 @@
         </div>
             </div>
 
-            <div class="col-3"></div>
+
      
             <!-- END Row #2 -->
           </div>

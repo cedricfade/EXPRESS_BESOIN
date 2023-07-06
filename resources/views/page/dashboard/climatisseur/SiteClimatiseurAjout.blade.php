@@ -43,11 +43,17 @@
       @include('page.dashboard.header')
       <!-- END Header -->
 
+    
+
+
+
       <!-- Main Container -->
-      <main id="main-container">
+
+
+      <main id="main-container" class="animate__animated  " >
         <!-- Page Content -->
         <div class="content">
-            <form class="js-validation-signin" action="{{ route('site.climatiseur.traitement') }}" method="POST">
+            {{-- <form class="js-validation-signin" action="{{ route('site.climatiseur.traitement') }}" method="POST"> --}}
                 @csrf
                 <div class="row">
                     <!-- Row #1 -->
@@ -59,22 +65,22 @@
                   </div>
               <div class="row">
     
-                <div class="col-3"></div>
-                <div class="col-6">
+
+                <div class="col-xl-5 col-md-5 col-lg-5 col-10 mx-auto">
                     
-                <div class="form">
+                <div class="form animate__animated " id='champ_obligatoire'>
     
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control" id="login-username" name="libelle" placeholder="Enter your username" style="text-transform: capitalize" required>
+                        <input type="text" class="form-control" id="champ_obligatoire" name="libelle" placeholder="Enter your username" style="text-transform: capitalize" onchange="end_form()">
                         <label class="form-label" for="login-username" >Site</label>
                       </div>
                       <div class="form-floating mb-4">
-                        <input type="text" class="form-control" id="login-username" name="ville" placeholder="Enter your username" style="text-transform: capitalize" required>
+                        <input type="text" class="form-control" id="champ_obligatoire" name="ville" placeholder="Enter your username" style="text-transform: capitalize" onchange="end_form()">
                         <label class="form-label" for="login-username" >Ville</label>
                       </div>
     
                       <div class="form-floating mb-4">
-                        <input type="text" class="form-control" id="login-username" name="commune" placeholder="Enter your username" style="text-transform: capitalize" required>
+                        <input type="text" class="form-control" id="champ_obligatoire" name="commune" placeholder="Enter your username" style="text-transform: capitalize" onchange="end_form()">
                         <label class="form-label" for="login-username" >Commune</label>
                       </div>
     
@@ -124,15 +130,49 @@
                       <span id="climatiseurs">
              
                       </span>
-    
                       
     
+                      
+                    
                       <script>
+                        function end_form()
+{
+var champ_obligatoire = [ 'site', 'ville', 'commune'];
+var champ_plein = true;
+for (var h; h<3; h++)
+{
+$valeur = document.getElementById(champ_obligatoire[h]).value;
+if( (valeur.length == 0) || (valeur == "") || (valeur == "NULL") )
+{
+champ_plein = false;
+}
+}
+if (champ_plein)
+{
+document.getElementById('Validation').disabled = false;
+ 
+}
+else
+{
+document.getElementById('Validation').disabled = true;
+}
+}
+
+                        function btnSuivant(){
+                        var $btnsuivant = document.querySelector('.btn_suivant')
+                        if ($btnsuivant) {
+                          document.querySelector('.form').classList.add('animate__bounceOutDown');
+                          
+                        }
+
+                   
+
+                        }
     
                       </script>
                     <div class="row g-sm mb-4"> 
                       <div class="col-12 mb-2">
-                        <button type="submit" class="btn btn-lg btn-alt-primary w-100 py-3 fw-semibold">
+                        <button type="submit"  class="btn_suivant btn btn-lg btn-alt-primary w-100 py-3 fw-semibold bb" onclick="btnSuivant()" id="Validation" disabled="disabled">
                        Suivant
                         </button>
                       </div>
@@ -148,7 +188,7 @@
             </div>
                 </div>
     
-                <div class="col-3"></div>
+
          
                 <!-- END Row #2 -->
               </div>

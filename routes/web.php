@@ -41,12 +41,12 @@ route::post('inscription.create',[UserController::class,'inscriptionAction'])->n
 
 
 
-// SITE
-Route::get('/site',[SiteController::class,'siteListe'])->name('site.liste');
-Route::get('/site/view',[SiteController::class,'siteView'])->name('site.view');
-// SITE climatiseur
-Route::get('/site/ajout',[SiteController::class,'Ajoutsite'])->name('site.ajout');
-Route::post('/traitement.site',[SiteController::class,'AjoutsiteAction'])->name('site.ajout.action');
+// // SITE
+// Route::get('/site',[SiteController::class,'siteListe'])->name('site.liste');
+// Route::get('/site/view',[SiteController::class,'siteView'])->name('site.view');
+// // SITE climatiseur
+// Route::get('/site/ajout',[SiteController::class,'Ajoutsite'])->name('site.ajout');
+// Route::post('/traitement.site',[SiteController::class,'AjoutsiteAction'])->name('site.ajout.action');
 
 
 // CLIMATISEUR ET SITE
