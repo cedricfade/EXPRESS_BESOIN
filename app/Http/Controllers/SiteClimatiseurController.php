@@ -19,6 +19,13 @@ class SiteClimatiseurController extends Controller
     public function SiteClimatiseurTraitement(Request $request){
 
 
+        $this->validate($request,[
+            'libelle'=> 'required',
+            'commune'=> 'required',
+            'ville'=> 'required',
+        ]);
+
+
         $site = new Site();
         $site->user_id = auth()->user()->id;
         $site->libelle = $request->libelle;
@@ -89,7 +96,11 @@ public function ClimatiseurInfos($id){
 
         $this->validate($request,[
             'photo' => 'mimes:png,jpg,jpeg',
-            'chevaux' => 'numeric',
+            'chevaux' => 'required|numeric',
+            'marque' => 'required',
+            'modele' => 'required',
+            'type_climatiseur' => 'required',
+            'photo' => 'required',
         ]);
 
        if (isset($request->photo)) {

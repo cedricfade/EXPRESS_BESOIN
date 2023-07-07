@@ -35,11 +35,11 @@
         Adding .smini-visible to an element will show it only when the sidebar is in mini mode
         Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
       -->
-   
+
       {{-- SIDEBAR --}}
       @include('page.dashboard.sidebar')
       <!-- Header -->
-  
+
       @include('page.dashboard.header')
       <!-- END Header -->
 
@@ -47,38 +47,38 @@
       <main id="main-container" class="">
         <!-- Page Content -->
         <div class="content">
-          
+
                 <div class="row">
                     <!-- Row #1 -->
                     <div class="col-12 col-xl-12 text-center animate__animated animate__bounceInDown">
                       <h2>Sites récemment ajoutés</h2>
                     </div>
-                
+
                     <!-- END Row #1 -->
                   </div>
-              
+
                   <br>
-           
 
-                 
+
+
               <div class="form row animate__animated animate__bounceInUp">
-                 
-              
-              
-                    @foreach ($sites as $site)
 
-                 
+
+
+                    @foreach ($sitelampe as $sitelampe)
+
+
                     <div class=" col-md-3 col-xl-3 pb-2 col-6 col-lg-3 col-sm-4 mx-auto ">
-                        <a class="block block-rounded text-center" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}">
+                        <a class="block block-rounded text-center" href="{{ route('climatiseur.ajout',['id'=>$sitelampe->id]) }}">
                           <div class="block-content block-content-full block-content-sm bg-primary">
-                            <span class="fw-semibold text-white" style="text-transform: capitalize">{{ $site->libelle }}</span>
+                            <span class="fw-semibold text-white" style="text-transform: capitalize">{{ $sitelampe->libelle }}</span>
                           </div>
-                       
+
                           <div class="block-content">
                             <div class="row items-push text-center">
                               <div class="col-12">
                                 <div class="mb-1"><i class="si si-map fa-2x text-primary"></i></div>
-                                <span style="text-transform: capitalize">{{ $site->ville }} |  {{ $site->commune }}</span>
+                                <span style="text-transform: capitalize">{{ $sitelampe->ville }} |  {{ $sitelampe->commune }}</span>
                                 <div class="fs-sm text-muted"></div>
                               </div>
                               {{-- <div class="col-6">
@@ -89,29 +89,29 @@
                           </div>
                         </a>
 
-                    
 
-                  
-                        <a type="submit" class="btn_suivant btn btn-lg btn-alt-primary w-100 py-3 fw-semibold" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}" onclick="btnSuivant()">
-                      Ajouter climatiseur
+
+
+                        <a type="submit" class="btn_suivant btn btn-lg btn-alt-primary w-100 py-3 fw-semibold" href="{{ route('lampe.ajout',['id'=>$sitelampe->id]) }}" onclick="btnSuivant()">
+                      Ajouter une lampe
                       </a>
 
-                    
+
                       </div>
-                    
-                     
-                        
+
+
+
                     @endforeach
-                
-                  
-                
-                   
+
+
+
+
             </div>
                 </div>
-    
-        
-   
-   
+
+
+
+
         </div>
         <!-- END Page Content -->
       </main>
@@ -141,19 +141,19 @@
   .swal2-icon {
     font-size: 10px !important;
   }
-  
+
   .swal2-title {
     max-height: 70px;
     font-size: 17px !important
   }
-  
+
   .swal2-confirm {
     background: #3aa9a9 !important;
   }
   </style>
 <script>
 @if (session('site_add'))
-  
+
 
   Swal.fire({
   position: 'top-end',
@@ -164,7 +164,7 @@
 
 })
 @endif
-  
+
 
 
 

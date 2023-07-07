@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('climatiseurs', function (Blueprint $table) {
+        Schema::create('lampes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('site_id')->constrained();
+            $table->foreignId('sitelampe_id')->constrained();
             $table->string('marque');
             $table->string('type_climatiseur');
             $table->string('chevaux');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('climatiseurs');
+        Schema::dropIfExists('lampes');
     }
 };

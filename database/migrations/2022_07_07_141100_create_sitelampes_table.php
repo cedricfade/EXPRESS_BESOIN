@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('climatiseurs', function (Blueprint $table) {
+        Schema::create('sitelampes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('site_id')->constrained();
-            $table->string('marque');
-            $table->string('type_climatiseur');
-            $table->string('chevaux');
-            $table->string('sommes_chevaux');
-            $table->string('photo')->nullable('cascade');
+            $table->string('libelle');
+            $table->string('commune');
+            $table->string('ville');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('climatiseurs');
+        Schema::dropIfExists('sitelampes');
     }
 };

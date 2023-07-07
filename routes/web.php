@@ -4,7 +4,9 @@ use App\Http\Controllers\AjoutComposantController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SiteClimatiseurController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\SiteLampeController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\SiteClimatiseurList;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -51,7 +53,6 @@ route::post('inscription.create',[UserController::class,'inscriptionAction'])->n
 
 // CLIMATISEUR ET SITE
 
-// site ajout
 Route::get('/site/climatiseur/new',[SiteClimatiseurController::class,'SiteClimatiseurAjout'])->name('site.climatiseur.ajout');
 Route::post('/site/climatiseur/traitement',[SiteClimatiseurController::class,'SiteClimatiseurTraitement'])->name('site.climatiseur.traitement');
 Route::get('/site/climatiseur/view',[SiteClimatiseurController::class,'SiteClimatiseurView'])->name('site.climatiseur.view');
@@ -61,5 +62,20 @@ Route::get('/climatiseur/{id}',[SiteClimatiseurController::class,'Climatiseur'])
 Route::post('/climatiseur.action',[SiteClimatiseurController::class,'ClimatiseurAction'])->name('climatiseur.action');
 
 Route::get('/climatiseur/infos/{id}/{libelle}',[SiteClimatiseurController::class,'ClimatiseurInfos'])->name('climatiseur.infos');
+
+
+
+
+//LAMPE ET CLIMATISEUR
+
+Route::get('/site/lampe/new',[SiteLampeController::class,'siteLampeAjout'])->name('site.lampe.ajout');
+ Route::post('/site/lampe/traitement',[SiteLampeController::class,'Sitelampe'])->name('site.lampe.traitement');
+ Route::get('/site/lampe/view',[SiteLampeController::class,'SiteLampeView'])->name('site.lampe.view');
+//  Route::get('/site/lampe/liste',[SiteLampeController::class,'siteLampeList'])->name('site.lampe.list');
+
+//  Route::get('/lampe/{id}',[SiteLampeController::class,'lampe'])->name('lampe.ajout');
+// Route::post('/climatiseur.action',[SiteClimatiseurController::class,'ClimatiseurAction'])->name('climatiseur.action');
+
+// Route::get('/climatiseur/infos/{id}/{libelle}',[SiteClimatiseurController::class,'ClimatiseurInfos'])->name('climatiseur.infos');
 
 

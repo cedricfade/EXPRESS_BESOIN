@@ -35,15 +35,15 @@
         Adding .smini-visible to an element will show it only when the sidebar is in mini mode
         Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
       -->
-   
+
       {{-- SIDEBAR --}}
       @include('page.dashboard.sidebar')
       <!-- Header -->
-  
+
       @include('page.dashboard.header')
       <!-- END Header -->
 
-    
+
 
 
 
@@ -53,7 +53,7 @@
       <main id="main-container" class="animate__animated  animate__bounceInUp" >
         <!-- Page Content -->
         <div class="content">
-            <form class="js-validation-signin" action="{{ route('site.climatiseur.traitement') }}" method="POST">
+            <form class="js-validation-signin" action="{{route('site.lampe.traitement')}}" method="POST">
                 @csrf
                 <div class="row">
                     <!-- Row #1 -->
@@ -63,22 +63,22 @@
                       {{-- @if ($errors->any())
                        @foreach ($errors->all() as $error)
                        <div>{{ $error }}</div>
-                           
+
                        @endforeach
-                          
+
                       @endif --}}
-                     
+
                     </div>
-                
+
                     <!-- END Row #1 -->
                   </div>
-                  
+
               <div class="row">
-              
-    
+
+
 
                 <div class="col-xl-5 col-md-5 col-lg-5 col-10 mx-auto">
-                    
+
                 <div class="form animate__animated " id='champ_obligatoire'>
 
                   {{-- <div class="form-floating mb-4">
@@ -92,45 +92,45 @@
                         @error('libelle')
                         <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
-                          
+
                         @enderror
                         <span style="font-size: 12px;color:#444">Exp:(Immeuble  R+4)</span>
                       </div>
                       <div class="form-floating mb-4">
                         <input type="text" class="form-control" id="ville" name="ville" placeholder="Enter your username" style="text-transform: capitalize" value="{{ old('ville') }}">
-                      
+
                         <label class="form-label" for="login-username" >Ville</label>
                         @error('ville')
                         <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
-                          
+
                         @enderror
                           <span style="font-size: 12px;color:#444">Exp:(Abidjan)</span>
                       </div>
-    
+
                       <div class="form-floating mb-4">
                         <input type="text" class="form-control" id="commune" name="commune" placeholder="Enter your username" style="text-transform: capitalize " value="{{ old('site') }}">
                         <label class="form-label" for="login-username" >Commune</label>
                         @error('commune')
                         <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
-                          
+
                         @enderror
                         <span style="font-size: 12px;color:#444">Exp:(Cocody)</span>
                       </div>
-  
-    
+
+
                       <span id="climatiseurs">
-             
+
                       </span>
-                      
-    
-                      
-                    
+
+
+
+
                       <script>
-                       
+
                       </script>
-                    <div class="row g-sm mb-4"> 
+                    <div class="row g-sm mb-4">
                       <div class="col-12 mb-2">
                         <button type="submit"  class="btn_suivant btn btn-lg btn-alt-primary w-100 py-3 fw-semibold bb" onclick="btnSuivant()" id="Validation" value="Validation">
                        Suivant
@@ -141,20 +141,20 @@
                            Réinitialiser
                           </button>
                       </div>
-                 
+
                     </div>
-                
-    
+
+
             </div>
                 </div>
-    
 
-         
+
+
                 <!-- END Row #2 -->
               </div>
             </form>
-   
-   
+
+
         </div>
         <!-- END Page Content -->
       </main>
