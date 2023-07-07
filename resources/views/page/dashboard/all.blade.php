@@ -111,6 +111,12 @@
                 </div>
               </a>
             </div>
+            <livewire:counter></livewire:counter>
+
+
+
+
+        
        
            
 

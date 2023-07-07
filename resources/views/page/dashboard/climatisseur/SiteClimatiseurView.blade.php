@@ -44,13 +44,13 @@
       <!-- END Header -->
 
       <!-- Main Container -->
-      <main id="main-container" class="animate__animated animate__bounceInRight">
+      <main id="main-container" class="">
         <!-- Page Content -->
         <div class="content">
           
                 <div class="row">
                     <!-- Row #1 -->
-                    <div class="col-12 col-xl-12 text-center">
+                    <div class="col-12 col-xl-12 text-center animate__animated animate__bounceInDown">
                       <h2>Sites récemment ajoutés</h2>
                     </div>
                 
@@ -61,14 +61,14 @@
            
 
                  
-              <div class="row">
+              <div class="form row animate__animated animate__bounceInUp">
                  
               
               
                     @foreach ($sites as $site)
 
                  
-                    <div class="col-md-3 col-xl-3 pb-2 col-6 col-lg-3 col-sm-4 mx-auto">
+                    <div class=" col-md-3 col-xl-3 pb-2 col-6 col-lg-3 col-sm-4 mx-auto ">
                         <a class="block block-rounded text-center" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}">
                           <div class="block-content block-content-full block-content-sm bg-primary">
                             <span class="fw-semibold text-white" style="text-transform: capitalize">{{ $site->libelle }}</span>
@@ -92,7 +92,7 @@
                     
 
                   
-                        <a type="submit" class="btn btn-lg btn-alt-primary w-100 py-3 fw-semibold" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}">
+                        <a type="submit" class="btn_suivant btn btn-lg btn-alt-primary w-100 py-3 fw-semibold" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}" onclick="btnSuivant()">
                       Ajouter climatiseur
                       </a>
 

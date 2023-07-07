@@ -44,12 +44,12 @@
       <!-- END Header -->
 
       <!-- Main Container -->
-      <main id="main-container" class="animate__animated animate__bounceInRight">
+      <main id="main-container" class="">
         <!-- Page Content -->
         <div class="content">
           <div class="row">
             <!-- Row #1 -->
-            <div class="col-12 col-xl-12 text-center">
+            <div class="col-12 col-xl-12 text-center animate__animated animate__bounceInDown">
               <h2>Informations du climatiseur</h2>
             </div>
         
@@ -57,15 +57,8 @@
           </div>
           <form class="js-validation-signin" action="{{ route('climatiseur.action') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            @if ($errors->any())
-
-            @foreach ($errors->all() as $error)
-            <span class="bg-danger p-3">{{ $error }}</span>
-                
-            @endforeach
-                
-            @endif
-          <div class="row">
+      
+          <div class="row row animate__animated animate__bounceInUp">
 
           
 
@@ -74,23 +67,34 @@
 
            
                 
-            <div class="form">
+            <div class="form animate__animated ">
                 <div class="form-floating mb-4" hidden>
                     <input type="text" class="form-control" id="login-username" name="site_id" placeholder="Enter your username" value=" {{ $site->id }}" hidden>
                     <label class="form-label" for="login-username">site_id</label>
+                    
                   </div>
      
                 <div class="form-floating mb-4">
-                  <input type="text" class="form-control" id="login-username" name="marque" placeholder="Enter your username" required>
+                  <input type="text" class="form-control" id="login-username" name="marque" placeholder="Enter your username" >
                   <label class="form-label" for="login-username">Marque</label>
+                  @error('marque')
+                  <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
+                                
+                  @enderror
+                  <span style="font-size: 12px;color:#868282">Exp:(Nasco, trame)</span>
                 </div>
                 <div class="form-floating mb-4">
-                  <input type="text" class="form-control" id="login-password" name="modele" placeholder="Enter your password" required>
+                  <input type="text" class="form-control" id="login-password" name="modele" placeholder="Enter your password" >
                   <label class="form-label" for="">Modèle</label>
+                  @error('modele')
+                  <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
+
+                    
+                  @enderror
                 </div>
                 <div class="form-floating mb-4">
                     
-                    <select id="" class="form-control" name="type_climatiseur" required>
+                    <select id="" class="form-control" name="type_climatiseur" value='{{ old('type_climatiseur') }}'>
                         <option value="" selected hidden>Choisir</option>
                         <option value="Climatiseur monobloc">Climatiseur Monobloc</option>
                         <option value="Climatiseur split">Climatiseur Split</option>
@@ -102,18 +106,33 @@
 
                     </select>
                     <label class="form-label" for="">Type de climatiseur</label>
+                    @error('type_climatiseur')
+                    <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
+
+                      
+                    @enderror
                   
                   </div>
 
                   <div class="form-floating mb-4">
-                    <input type="name" class="form-control" id="login-password" name="chevaux" placeholder="Enter your password" required>
+                    <input type="name" class="form-control" id="login-password" name="chevaux" placeholder="Enter your password" >
                     <label class="form-label" for="">Nombre de chevaux</label>
+                    @error('chevaux')
+                    <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
+
+                      
+                    @enderror
                   </div>
               
 
                   <div class="form-floating mb-4">
                     <input type="file" class="form-control" id="login-password"  placeholder="Enter your password" name="photo">
                     <label class="form-label" for="">Image étiquette</label>
+                    @error('photo')
+                    <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
+
+                      
+                    @enderror
                   </div>
                 
 
@@ -130,12 +149,12 @@
                   </script>
                 <div class="row g-sm mb-4"> 
                   <div class="col-12 mb-2">
-                    <button type="submit" class="btn btn-lg btn-alt-primary w-100 py-3 fw-semibold">
+                    <button type="submit" class="btn_suivant btn btn-lg btn-alt-primary w-100 py-3 fw-semibold" onclick="btnSuivant()">
                    Sauvegarder
                     </button>
                   </div>
                   <div class="col-sm-12 mb-1">
-                    <button type="reset" class="btn btn-lg w-100 py-3 text-danger fw-semibold">
+                    <button type="reset" class="btn btn-lg w-100 py-3 text-danger fw-semibold" >
                        Réinitialiser
                       </button>
                   </div>

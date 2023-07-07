@@ -136,7 +136,7 @@
                 
             @empty
                <div class="col-xl-12 bg-info p-3 text-light text-center">
-                <span style="font-size: 1.3em">Vous n'avez pas de climatiseur disponible !</span>
+                <span style="font-size: 1.3em">Vous n'avez pas de climatiseur disponible ! <a href="{{ route('site.climatiseur.view') }}" style="text-decoration: underline;color:#fff">Ajouter</a></span>
 
                </div>
             @endforelse

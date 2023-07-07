@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SiteClimatiseurController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\SiteClimatiseurList;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -51,7 +52,6 @@ route::post('inscription.create',[UserController::class,'inscriptionAction'])->n
 
 // CLIMATISEUR ET SITE
 
-// site ajout
 Route::get('/site/climatiseur/new',[SiteClimatiseurController::class,'SiteClimatiseurAjout'])->name('site.climatiseur.ajout');
 Route::post('/site/climatiseur/traitement',[SiteClimatiseurController::class,'SiteClimatiseurTraitement'])->name('site.climatiseur.traitement');
 Route::get('/site/climatiseur/view',[SiteClimatiseurController::class,'SiteClimatiseurView'])->name('site.climatiseur.view');
@@ -63,3 +63,6 @@ Route::post('/climatiseur.action',[SiteClimatiseurController::class,'Climatiseur
 Route::get('/climatiseur/infos/{id}/{libelle}',[SiteClimatiseurController::class,'ClimatiseurInfos'])->name('climatiseur.infos');
 
 
+
+
+//LAMPE ET CLIMATISEUR

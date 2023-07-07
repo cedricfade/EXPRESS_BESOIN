@@ -17,10 +17,9 @@ return new class extends Migration
             $table->foreignId('site_id')->constrained();
             $table->string('marque');
             $table->string('type_climatiseur');
-            $table->string('puissance_electrique');
-            $table->string('puissance_frigorifique');
-            $table->string('local_site');
-            $table->string('image');
+            $table->string('chevaux');
+            $table->string('sommes_chevaux');
+            $table->string('photo')->nullable('cascade');
             $table->timestamps();
         });
     }
