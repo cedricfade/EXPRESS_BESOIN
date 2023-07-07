@@ -44,32 +44,33 @@
       <!-- END Header -->
 
       <!-- Main Container -->
-      <main id="main-container">
+      <main id="main-container" class="animate__animated animate__bounceInRight">
         <!-- Page Content -->
         <div class="content">
           <div class="row">
             <!-- Row #1 -->
             <div class="col-12 col-xl-12 text-center">
-              <h1>Informations du climatiseur</h1>
+              <h2>Informations du climatiseur</h2>
             </div>
         
             <!-- END Row #1 -->
           </div>
           <form class="js-validation-signin" action="{{ route('climatiseur.action') }}" method="POST" enctype="multipart/form-data">
             @csrf
-          <div class="row">
-
             @if ($errors->any())
 
             @foreach ($errors->all() as $error)
-            {{ $error }}
+            <span class="bg-danger p-3">{{ $error }}</span>
                 
             @endforeach
                 
             @endif
+          <div class="row">
 
-            <div class="col-3"></div>
-            <div class="col-6">
+          
+
+     
+            <div class="col-xl-5 col-md-5 col-lg-5 col-10 mx-auto">
 
            
                 
@@ -105,16 +106,13 @@
                   </div>
 
                   <div class="form-floating mb-4">
-                    <input type="name" class="form-control" id="login-password" name="puissance_electrique" placeholder="Enter your password" required>
-                    <label class="form-label" for="">Puissance électrique (kW)</label>
+                    <input type="name" class="form-control" id="login-password" name="chevaux" placeholder="Enter your password" required>
+                    <label class="form-label" for="">Nombre de chevaux</label>
                   </div>
-                  <div class="form-floating mb-4">
-                    <input type="name" class="form-control" id="login-password" name="puissance_frigorifique" placeholder="Enter your password" required>
-                    <label class="form-label" for="">Puissance frigorifique (kW)</label>
-                  </div>
+              
 
                   <div class="form-floating mb-4">
-                    <input type="file" class="form-control" id="login-password"  placeholder="Enter your password" name="photo" required>
+                    <input type="file" class="form-control" id="login-password"  placeholder="Enter your password" name="photo">
                     <label class="form-label" for="">Image étiquette</label>
                   </div>
                 
@@ -148,7 +146,7 @@
         </div>
             </div>
 
-            <div class="col-3"></div>
+
      
             <!-- END Row #2 -->
           </div>

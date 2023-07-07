@@ -16,9 +16,9 @@
 
   </head>
 
-  <body>
+  <body class="">
 
-    <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-modern main-content-boxed">
+    <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-modern main-content-boxed ">
       <!-- Side Overlay-->
 
       <!-- END Side Overlay -->
@@ -44,24 +44,31 @@
       <!-- END Header -->
 
       <!-- Main Container -->
-      <main id="main-container">
+      <main id="main-container" class="animate__animated animate__bounceInRight">
         <!-- Page Content -->
         <div class="content">
           
                 <div class="row">
                     <!-- Row #1 -->
                     <div class="col-12 col-xl-12 text-center">
-                      <h1>Informations du site</h1>
+                      <h2>Sites récemment ajoutés</h2>
                     </div>
                 
                     <!-- END Row #1 -->
                   </div>
+              
+                  <br>
+           
+
+                 
               <div class="row">
+                 
+              
               
                     @foreach ($sites as $site)
-                  
-                    
-                    <div class="col-md-6 col-xl-3">
+
+                 
+                    <div class="col-md-3 col-xl-3 pb-2 col-6 col-lg-3 col-sm-4 mx-auto">
                         <a class="block block-rounded text-center" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}">
                           <div class="block-content block-content-full block-content-sm bg-primary">
                             <span class="fw-semibold text-white" style="text-transform: capitalize">{{ $site->libelle }}</span>
@@ -71,7 +78,7 @@
                             <div class="row items-push text-center">
                               <div class="col-12">
                                 <div class="mb-1"><i class="si si-map fa-2x text-primary"></i></div>
-                                {{ $site->ville }} |  {{ $site->commune }}
+                                <span style="text-transform: capitalize">{{ $site->ville }} |  {{ $site->commune }}</span>
                                 <div class="fs-sm text-muted"></div>
                               </div>
                               {{-- <div class="col-6">
@@ -81,10 +88,15 @@
                             </div>
                           </div>
                         </a>
+
+                    
+
+                  
                         <a type="submit" class="btn btn-lg btn-alt-primary w-100 py-3 fw-semibold" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}">
-                            Suivant
-                        </a>
-                      
+                      Ajouter climatiseur
+                      </a>
+
+                    
                       </div>
                     
                      
@@ -121,5 +133,41 @@
         webpack is putting everything together at assets/_js/main/app.js
     -->
 @include('page.script')
+<style>
+  .swal2-popup {
+    max-height: 300px !important;
+    max-width: 300px !important;
+  }
+  .swal2-icon {
+    font-size: 10px !important;
+  }
+  
+  .swal2-title {
+    max-height: 70px;
+    font-size: 17px !important
+  }
+  
+  .swal2-confirm {
+    background: #3aa9a9 !important;
+  }
+  </style>
+<script>
+@if (session('site_add'))
+  
+
+  Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: "{{ session('site_add') }}",
+  showConfirmButton: false,
+  timer: 2500,
+
+})
+@endif
+  
+
+
+
+</script>
   </body>
 </html>

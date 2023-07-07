@@ -29,7 +29,7 @@ class SiteClimatiseurController extends Controller
 
 
 
-        return redirect()->route('site.climatiseur.view');
+ return redirect()->route('site.climatiseur.view')->with('site_add','Site ajouté avec succès');
 
 
     }
@@ -52,9 +52,15 @@ class SiteClimatiseurController extends Controller
     }
     public function SiteClimatiseurView(){
         $sites = Site::where('user_id',auth()->user()->id)->get()->sortDesc();
+        $climatiseurs = climatiseur::all();
+
+        foreach ($climatiseurs as $climatiseur) {
+            $climatiseur;
+        }
 
 
-        return view('page.dashboard.climatisseur.SiteClimatiseurView', compact('sites'));
+
+        return view('page.dashboard.climatisseur.SiteClimatiseurView', compact('sites','climatiseurs'));
 
     }
 
@@ -63,7 +69,7 @@ class SiteClimatiseurController extends Controller
 public function ClimatiseurInfos($id){
 
     $site = Site::findOrFail($id);
-    $climatiseurs = climatiseur::all();
+    $climatiseurs = climatiseur::where('site_id',$site->id)->get();
 
     return view('page.dashboard.climatisseur.ClimInfos',compact('site','climatiseurs'));
 
@@ -82,28 +88,40 @@ public function ClimatiseurInfos($id){
     public function ClimatiseurAction(Request $request){
 
         $this->validate($request,[
-            'photo' => 'required|mimes:png,jpg,jpeg|max:2048',
+            'photo' => 'mimes:png,jpg,jpeg',
+            'chevaux' => 'numeric',
         ]);
 
+       if (isset($request->photo)) {
         $filename = time().'.'. $request->photo->extension();
-
-        // Pour enregistré un fichier depuis request
+          // Pour enregistré un fichier depuis request
        $path =  $request->file('photo')->storeAs('image_clim',$filename,'public');
+       }
+
+
+
+
+       $cv = 0.7457;
+
 
 
         $climatiseur = new climatiseur();
 
+
+        $climatiseur->user_id = auth()->user()->id;
         $climatiseur->site_id  = $request->site_id;
         $climatiseur->marque = $request->marque;
         $climatiseur->type_climatiseur = $request->type_climatiseur;
-        $climatiseur->puissance_electrique = $request->puissance_electrique;
-        $climatiseur->puissance_frigorifique = $request->puissance_frigorifique;
+        $climatiseur->chevaux = $request->chevaux;
+        $climatiseur->sommes_chevaux = $cv* $request->chevaux;
         $climatiseur->photo = $path;
-
-
     //    dd($climatiseur);
 
+    //   dd($pivot);
+
     $climatiseur->save();
+
+    // dd($pivot);
 
 
 

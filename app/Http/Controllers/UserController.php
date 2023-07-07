@@ -17,6 +17,7 @@ class UserController extends Controller
     }
 
 
+
     public function LoginAction(Request $request){
 
         $request->validate([
@@ -24,7 +25,7 @@ class UserController extends Controller
             'password'=>'required',
         ]);
 
-        
+
         if (Auth()->attempt(['email' =>$request->email, 'password'=>$request->password])) {
             $request->session()->regenerate();
             return redirect()->route('dashboard')->with('connexion','Vous être bien connecté');
@@ -74,7 +75,7 @@ class UserController extends Controller
     //         'password'=>$request->Hash::make($request->password),
 
     //      ]);
-    
+
 
        //  //    Pour générer un nom d'un fichier et recuperer l'extention d'une image
       $filename = time().'.'. $request->photo->extension();
