@@ -22,16 +22,23 @@
      line-height: 2.3em;
 
      padding-left: 15px !important
-  
-   
+
+
+    }
+    .ma-table th{
+        font-weight: 300;
+        text-decoration: underline;
     }
 
     .ma-table td{
-   
-     
+
+        font-size: 1.1em;
+        font-weight: bold
+
+
     }
   </style>
-  
+
 
 
   </head>
@@ -55,11 +62,11 @@
         Adding .smini-visible to an element will show it only when the sidebar is in mini mode
         Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
       -->
-   
+
       {{-- SIDEBAR --}}
       @include('page.dashboard.sidebar')
       <!-- Header -->
-  
+
       @include('page.dashboard.header')
       <!-- END Header -->
 
@@ -81,12 +88,12 @@
                     </div>
                   </a>
                 <h3><i class="fa fa-map-pin" style="font-size: 22px"></i> {{ $site->libelle }}</h3>
-                
+
             </div>
 
             @forelse ($climatiseurs as $climatiseur)
             <div class="col-xl-6">
-              
+
               <div class="block block-rounded">
                   <div class="block-header block-header-default">
                     <h3 class="block-title">Climatiseur <small>({{ $climatiseur->marque }})</small></h3>
@@ -120,20 +127,20 @@
              </tr>
              <tr>
               <th style="text-transform: capitalize">Puissance en Kw : </th>
-              <td style="text-transform: capitalize">{{ $climatiseur->sommes_chevaux }} kw</td>
+              <td style="text-transform: capitalize; background-color: #0d0c24;text-align: center; color:#fff; font-weight: 800"><span class="counter" style="font-size: 1.6em">{{ $climatiseur->sommes_chevaux }}</span> kw</td>
              </tr>
 
-            
-             
+
+
              </table>
              <figure>
-            <a href="{{ Storage::url($climatiseur->photo) }}" > <img src="{{ Storage::url($climatiseur->photo) }}" alt=""  height="80px" width="20%" style="padding:5px; border: 1px solid"></a>
-      
+            <a href="{{ Storage::url($climatiseur->photo) }}" > <img src="{{ Storage::url($climatiseur->photo) }}" alt=""   style="padding:5px; border: 1px solid; max-width: 80px;"></a>
+
             </figure>
             </div>
               </div>
           </div>
-                
+
             @empty
                <div class="col-xl-12 bg-info p-3 text-light text-center">
                 <span style="font-size: 1.3em">Vous n'avez pas de climatiseur disponible ! <a href="{{ route('site.climatiseur.view') }}" style="text-decoration: underline;color:#fff">Ajouter</a></span>
@@ -141,19 +148,19 @@
                </div>
             @endforelse
 
-          
 
-          
-        
+
+
+
             <!-- END Row #1 -->
- 
-         
 
 
 
 
 
-   
+
+
+
         </div>
         <!-- END Page Content -->
       </main>
