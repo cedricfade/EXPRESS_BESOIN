@@ -34,11 +34,11 @@
         Adding .smini-visible to an element will show it only when the sidebar is in mini mode
         Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
       -->
-   
+
       {{-- SIDEBAR --}}
       @include('page.dashboard.sidebar')
       <!-- Header -->
-  
+
       @include('page.dashboard.header')
       <!-- END Header -->
 
@@ -57,7 +57,7 @@
                   <div>
                     <div class="fs-3 fw-semibold">
                       <p class="counter" style="font-size: 1.6em">{{ $sites->count() }}</p>
-                      
+
                     </div>
                     <div class="fs-sm fw-semibold text-uppercase text-muted">Site(s)</div>
                   </div>
@@ -72,39 +72,39 @@
                     <i class="fa fa-shopping-bag fa-2x opacity-25"></i>
                   </div>
                   <div>
-              
+
                     <div class="fs-3 fw-semibold">
                       <p>
-                     
+
                        {{-- @foreach ($sites as $site) --}}
-                       
+
 
                        {{-- @php
                         $co = array(0);
                         $aff = array_sum($co);
 
                         echo $aff;
-                         
+
                        @endphp --}}
 
 
-                      
+
 
                        {{-- {{ $site->climatiseur->count()  }} --}}
-                           
+
                        {{-- @endforeach --}}
 
 
-                    
+
                        <span class="counter" style="font-size: 1.6em">
-                 
+
                        {{ $climatiseurs->count() }}
                       </span>
-                      
-       
-                 
-       
-                      
+
+
+
+
+
                     </div>
                     <div class="fs-sm fw-semibold text-uppercase text-muted">Climatiseur(s)</div>
                   </div>
@@ -116,24 +116,24 @@
 
 
 
-        
-       
-           
-
-
-      
-         
-
-            
 
 
 
-  
-          
 
-       
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </div>
         </div>
         <!-- END Page Content -->

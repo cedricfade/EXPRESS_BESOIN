@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\climatiseur;
-use App\Models\pivot;
 use App\Models\Site;
 use Illuminate\Http\Request;
 
 class SiteClimatiseurController extends Controller
 {
-    
+
     public function SiteClimatiseurAjout(){
 
         return view('page.dashboard.climatisseur.SiteClimatiseurAjout');
@@ -26,7 +25,7 @@ class SiteClimatiseurController extends Controller
             'ville'=> 'required',
         ]);
 
-        
+
         $site = new Site();
         $site->user_id = auth()->user()->id;
         $site->libelle = $request->libelle;
@@ -34,11 +33,11 @@ class SiteClimatiseurController extends Controller
         $site->ville = $request->ville;
 
        $site->save();
-       
 
 
-        return redirect()->route('site.climatiseur.view')->with('site_add','Site ajouté avec succès');
-      
+
+ return redirect()->route('site.climatiseur.view')->with('site_add','Site ajouté avec succès');
+
 
     }
 
@@ -47,10 +46,10 @@ class SiteClimatiseurController extends Controller
 
           $sites = Site::where('user_id', auth()->user()->id)->get()->sortDesc();
 
-        //   $sites = Site::all(); 
+        //   $sites = Site::all();
           // $sites = Site::with('climatiseurs')->find($site_id);
-  
-      
+
+
           $climatiseurs = climatiseur::all();
 
 
@@ -65,7 +64,7 @@ class SiteClimatiseurController extends Controller
         foreach ($climatiseurs as $climatiseur) {
             $climatiseur;
         }
-    
+
 
 
         return view('page.dashboard.climatisseur.SiteClimatiseurView', compact('sites','climatiseurs'));
@@ -110,15 +109,15 @@ public function ClimatiseurInfos($id){
        $path =  $request->file('photo')->storeAs('image_clim',$filename,'public');
        }
 
-      
-     
-   
+
+
+
        $cv = 0.7457;
-      
-  
+
+
 
         $climatiseur = new climatiseur();
-      
+
 
         $climatiseur->user_id = auth()->user()->id;
         $climatiseur->site_id  = $request->site_id;
@@ -133,9 +132,9 @@ public function ClimatiseurInfos($id){
 
     $climatiseur->save();
 
-    // dd($pivot); 
- 
-       
+    // dd($pivot);
+
+
 
       return redirect()->back()->with('clim','Climatiseur ajouté');
     }
