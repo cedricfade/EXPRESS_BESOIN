@@ -66,3 +66,4 @@ Route::get('/climatiseur/infos/{id}/{libelle}',[SiteClimatiseurController::class
 
 
 //LAMPE ET CLIMATISEUR
+
