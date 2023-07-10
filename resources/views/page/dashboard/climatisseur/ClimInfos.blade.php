@@ -21,8 +21,8 @@
     .ma-table tr{
      line-height: 2.3em;
 
-     padding-left: 15px !important
-
+     padding-left: 15.5px !important
+g
 
     }
     .ma-table th{
