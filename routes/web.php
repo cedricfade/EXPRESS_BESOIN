@@ -71,9 +71,9 @@ Route::get('/climatiseur/infos/{id}/{libelle}',[SiteClimatiseurController::class
 Route::get('/site/lampe/new',[SiteLampeController::class,'siteLampeAjout'])->name('site.lampe.ajout');
  Route::post('/site/lampe/traitement',[SiteLampeController::class,'Sitelampe'])->name('site.lampe.traitement');
  Route::get('/site/lampe/view',[SiteLampeController::class,'SiteLampeView'])->name('site.lampe.view');
-//  Route::get('/site/lampe/liste',[SiteLampeController::class,'siteLampeList'])->name('site.lampe.list');
+ Route::get('/site/lampe/liste',[SiteLampeController::class,'siteLampeList'])->name('site.lampe.list');
 
-//  Route::get('/lampe/{id}',[SiteLampeController::class,'lampe'])->name('lampe.ajout');
+ Route::get('/lampe/{id}',[SiteLampeController::class,'lampe'])->name('lampe.ajout');
 // Route::post('/climatiseur.action',[SiteClimatiseurController::class,'ClimatiseurAction'])->name('climatiseur.action');
 
 // Route::get('/climatiseur/infos/{id}/{libelle}',[SiteClimatiseurController::class,'ClimatiseurInfos'])->name('climatiseur.infos');

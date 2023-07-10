@@ -69,7 +69,7 @@
 
 
                     <div class=" col-md-3 col-xl-3 pb-2 col-6 col-lg-3 col-sm-4 mx-auto ">
-                        <a class="block block-rounded text-center" href="{{ route('climatiseur.ajout',['id'=>$sitelampe->id]) }}">
+                        <a class="block block-rounded text-center" href="{{ route('lampe.ajout',['id'=>$sitelampe->id]) }}">
                           <div class="block-content block-content-full block-content-sm bg-primary">
                             <span class="fw-semibold text-white" style="text-transform: capitalize">{{ $sitelampe->libelle }}</span>
                           </div>

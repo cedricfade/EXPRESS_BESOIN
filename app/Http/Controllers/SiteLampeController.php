@@ -73,6 +73,13 @@ class SiteLampeController extends Controller
 
 
   }
+  public function Climatiseur($id){
+
+    $sitelampe = Sitelampe::findOrFail($id);
+
+//     return view('page.dashboard.climatisseur.climatiseurAjout', compact('sitelampe'));
+return view('page.dashboard.lampe.lampeAjout',compact('sitelampe'));
+ }
 
 
 }
