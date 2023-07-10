@@ -35,11 +35,11 @@
         Adding .smini-visible to an element will show it only when the sidebar is in mini mode
         Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
       -->
-   
+
       {{-- SIDEBAR --}}
       @include('page.dashboard.sidebar')
       <!-- Header -->
-  
+
       @include('page.dashboard.header')
       <!-- END Header -->
 
@@ -52,49 +52,49 @@
             <div class="col-12 col-xl-12 text-center animate__animated animate__bounceInDown">
               <h2>Informations du climatiseur</h2>
             </div>
-        
+
             <!-- END Row #1 -->
           </div>
           <form class="js-validation-signin" action="{{ route('climatiseur.action') }}" method="POST" enctype="multipart/form-data">
             @csrf
-      
+
           <div class="row row animate__animated animate__bounceInUp">
 
-          
 
-     
+
+
             <div class="col-xl-5 col-md-5 col-lg-5 col-10 mx-auto">
 
-           
-                
+
+
             <div class="form animate__animated ">
                 <div class="form-floating mb-4" hidden>
                     <input type="text" class="form-control" id="login-username" name="site_id" placeholder="Enter your username" value=" {{ $site->id }}" hidden>
                     <label class="form-label" for="login-username">site_id</label>
-                    
+
                   </div>
-     
+
                 <div class="form-floating mb-4">
-                  <input type="text" class="form-control" id="login-username" name="marque" placeholder="Enter your username" >
+                  <input type="text" class="form-control" id="login-username" name="marque" placeholder="Enter your username" value="{{old('marque')}}" style="text-transform:Capitalize">
                   <label class="form-label" for="login-username">Marque</label>
                   @error('marque')
                   <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
-                                
+
                   @enderror
                   <span style="font-size: 12px;color:#868282">Exp:(Nasco, trame)</span>
                 </div>
                 <div class="form-floating mb-4">
-                  <input type="text" class="form-control" id="login-password" name="modele" placeholder="Enter your password" >
+                  <input type="text" class="form-control" id="login-password" name="modele" placeholder="Enter your password" value="{{old('modele')}}" style="text-transform:Capitalize">
                   <label class="form-label" for="">Modèle</label>
                   @error('modele')
                   <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
-                    
+
                   @enderror
                 </div>
                 <div class="form-floating mb-4">
-                    
-                    <select id="" class="form-control" name="type_climatiseur" value='{{ old('type_climatiseur') }}'>
+
+                    <select id="" class="form-control" name="type_climatiseur" value='{{ old('type_climatiseur') }}' style="text-transform:Capitalize">
                         <option value="" selected hidden>Choisir</option>
                         <option value="Climatiseur monobloc">Climatiseur Monobloc</option>
                         <option value="Climatiseur split">Climatiseur Split</option>
@@ -109,21 +109,21 @@
                     @error('type_climatiseur')
                     <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
-                      
+
                     @enderror
-                  
+
                   </div>
 
                   <div class="form-floating mb-4">
-                    <input type="name" class="form-control" id="login-password" name="chevaux" placeholder="Enter your password" >
+                    <input type="name" class="form-control" id="login-password" name="chevaux" placeholder="Enter your password" value="{{old('cheveaux')}}" style="text-transform:Capitalize">
                     <label class="form-label" for="">Nombre de chevaux</label>
                     @error('chevaux')
                     <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
-                      
+
                     @enderror
                   </div>
-              
+
 
                   <div class="form-floating mb-4">
                     <input type="file" class="form-control" id="login-password"  placeholder="Enter your password" name="photo">
@@ -131,23 +131,23 @@
                     @error('photo')
                     <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
-                      
+
                     @enderror
                   </div>
-                
+
 
                   {{-- FIN INFORMATION CLIM --}}
 
                   <span id="climatiseurs">
-         
+
                   </span>
 
-                  
+
 
                   <script>
 
                   </script>
-                <div class="row g-sm mb-4"> 
+                <div class="row g-sm mb-4">
                   <div class="col-12 mb-2">
                     <button type="submit" class="btn_suivant btn btn-lg btn-alt-primary w-100 py-3 fw-semibold" onclick="btnSuivant()">
                    Sauvegarder
@@ -158,50 +158,50 @@
                        Réinitialiser
                       </button>
                   </div>
-             
+
                 </div>
-            
+
 
         </div>
             </div>
 
 
-     
+
             <!-- END Row #2 -->
           </div>
         </form>
 
-        
 
 
- 
-         
-       
-             
+
+
+
+
+
             {{-- <input type="submit" value="valider" name="valider"> --}}
-             
-        
+
+
             {{-- <button onClick="champ()">ajouter un champ</button> --}}
             {{-- <script type="text/javascript">
- 
+
                 var i = 1;
-                 
+
                 function champ() {
-                 
+
                 i += 1;
-                     
-                var addfield = 
+
+                var addfield =
                 ' <span style="float:right">Ajout de Climatiseur</span> <br> <div class="form-floating mb-4"><input type="text" class="form-control" id="login-username" name="marque" placeholder="Enter your username" required> <label class="form-label" for="login-username">Marque</label></div> <div class="form-floating mb-4"><input type="text" class="form-control" id="login-password" name="modele" placeholder="Enter your password" required><label class="form-label" for="">Modèle</label></div> <div class="form-floating mb-4"><select id="" class="form-control" name="type_climatiseur" required> <option value="" selected hidden>Choisir</option><option value="Climatiseur monobloc">Climatiseur Monobloc</option><option value="Climatiseur split">Climatiseur Split</option><option value="Climatiseur réversible">Climatiseur Réversible</option><option value="Climatiseur mobile">Climatiseur Mobile</option><option value="Climatiseur fixe/mural">Climatiseur Fixe/Mural</option><option value="Climatiseur cassette">Climatiseur Cassette</option> </select><label class="form-label" for="">Type de climatiseur</label> </div>' ;
-                 
-                 
+
+
                 document.getElementById('climatiseurs').innerHTML +=addfield;
-                     
+
                 }
-                 
+
                 </script>
        --}}
-   
-   
+
+
         </div>
         <!-- END Page Content -->
       </main>
@@ -253,7 +253,7 @@
   timer: 2500,
 
 })
-  
+
     @endif
 
 
