@@ -77,7 +77,7 @@
                     <th>Libelle</th>
                     <th>Ville</th>
                     <th>Commune</th>
-                    <th>Nombre climatiseur</th>
+                    <th>Nombre de lampe</th>
                     <th>Action</th>
 
                 </tr>
@@ -85,18 +85,18 @@
             <tbody>
 
 
-              @foreach ($sites as $site)
+              @foreach ($sitelampe as $sitelampe)
 
               <tr>
-                <td style="text-transform: uppercase">{{ $site->libelle }}</td>
-                <td style="text-transform: uppercase">{{ $site->ville }}</td>
-                <td style="text-transform: uppercase">{{ $site->commune }}</td>
+                <td style="text-transform: uppercase">{{ $sitelampe->libelle }}</td>
+                <td style="text-transform: uppercase">{{ $sitelampe->ville }}</td>
+                <td style="text-transform: uppercase">{{ $sitelampe->commune }}</td>
                 <td>
-                  {{ $site->climatiseur->count()}}
+                   {{$sitelampe->lampe}}
 
                 </td>
                 <td>
-                    <a href="{{ route('climatiseur.infos',['id'=>$site->id,'libelle'=>Str::slug($site->libelle)]) }}">Voir <i class="fa fa-eye"></i></a>
+                    <a href="{{ route('lampe.infos',['id'=>$sitelampe->id,'libelle'=>Str::slug($sitelampe->libelle)]) }}">Voir <i class="fa fa-eye"></i></a>
                 </td>
 
             </tr>
@@ -111,7 +111,7 @@
                   <th>Libelle</th>
                   <th>Ville</th>
                   <th>Commune</th>
-                  <th>Nombre climatiseur</th>
+                  <th>Nombre de lampe</th>
 
                 </tr>
             </tfoot>
@@ -136,6 +136,7 @@
 
     <!--
         Codebase JS
+
 
         Core libraries and functionality
         webpack is putting everything together at assets/_js/main/app.js

@@ -73,23 +73,23 @@
                 <a class="block block-link-pop text-center" href="javascript:void(0)">
                     <div class="block-content">
                       <p class="fs-1 text-warning">
-                        <strong class="counter">{{ $site->climatiseur->count() }}</strong>
+                        <strong class="counter">{{ $sitelampe->lampe>count() }}</strong>
                       </p>
                       <p class="fw-medium">
-                        Climatiseur(s)
+                        lampe(s)
                       </p>
                     </div>
                   </a>
-                <h3><i class="fa fa-map-pin" style="font-size: 22px"></i> {{ $site->libelle }}</h3>
+                <h3><i class="fa fa-map-pin" style="font-size: 22px"></i> {{ $sitelampe->libelle }}</h3>
 
             </div>
 
-            @forelse ($climatiseurs as $climatiseur)
+            @forelse ($lampes as $lampe)
             <div class="col-xl-6">
 
               <div class="block block-rounded">
                   <div class="block-header block-header-default">
-                    <h3 class="block-title">Climatiseur <small>({{ $climatiseur->marque }})</small></h3>
+                    <h3 class="block-title">lampe <small>({{ $lampe->marque }})</small></h3>
                     <div class="block-options">
                       <button type="button" class="btn-block-option" data-toggle="block-option" data-action="fullscreen_toggle"></button>
                       <button type="button" class="btn-block-option" data-toggle="block-option" data-action="pinned_toggle">
@@ -108,26 +108,26 @@
              <table class="ma-table">
               <tr>
                   <th>Marque : </th>
-              <td>{{ $climatiseur->marque }} </td>
+              <td>{{ $lampe->marque }} </td>
               </tr>
              <tr>
               <th style="text-transform: capitalize">Type climatiseur : </th>
-              <td style="text-transform: capitalize">{{ $climatiseur->type_climatiseur }}</td>
+              <td style="text-transform: capitalize">{{ $lampe->lampe }}</td>
              </tr>
              <tr>
               <th style="text-transform: capitalize">Chevaux : </th>
-              <td style="text-transform: capitalize">{{ $climatiseur->chevaux }} Cv</td>
+              <td style="text-transform: capitalize">{{ $lampe->watt }} Cv</td>
              </tr>
              <tr>
               <th style="text-transform: capitalize">Puissance en Kw : </th>
-              <td style="text-transform: capitalize">{{ $climatiseur->sommes_chevaux }} kw</td>
+              <td style="text-transform: capitalize">{{ $lampe->sommes_watt }} kw</td>
              </tr>
 
 
 
              </table>
              <figure>
-            <a href="{{ Storage::url($climatiseur->photo) }}" > <img src="{{ Storage::url($climatiseur->photo) }}" alt=""  height="80px" width="20%" style="padding:5px; border: 1px solid"></a>
+            <a href="{{ Storage::url($lampe->photo) }}" > <img src="{{ Storage::url($lampe->photo) }}" alt=""  height="80px" width="20%" style="padding:5px; border: 1px solid"></a>
 
             </figure>
             </div>
@@ -136,7 +136,7 @@
 
             @empty
                <div class="col-xl-12 bg-info p-3 text-light text-center">
-                <span style="font-size: 1.3em">Vous n'avez pas de climatiseur disponible ! <a href="{{ route('site.climatiseur.view') }}" style="text-decoration: underline;color:#fff">Ajouter</a></span>
+                <span style="font-size: 1.3em">Vous n'avez pas de climatiseur disponible ! <a href="{{ route('site.lampe.view') }}" style="text-decoration: underline;color:#fff">Ajouter</a></span>
 
                </div>
             @endforelse

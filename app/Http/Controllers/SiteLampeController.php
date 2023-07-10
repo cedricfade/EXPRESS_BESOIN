@@ -38,7 +38,7 @@ class SiteLampeController extends Controller
 
     public function SiteLampeView(){
         $sitelampe = Sitelampe::where('user_id',auth()->user()->id)->get()->sortDesc();
-        $lampe = Lampe::all();
+        $lampe = lampe::all();
 
         foreach ($lampe as $lampe) {
             $lampe;
@@ -53,10 +53,10 @@ class SiteLampeController extends Controller
     public function siteLampeList(){
 
 
-        $sitelampe = Sitelampe::where('user_id' , auth()->user()->id->get()->sortDesc());
-        $sitelampe = Sitelampe::all();
+        $sitelampe = Sitelampe::where('user_id' , auth()->user()->id)->get()->sortDesc();
+        // $sitelampe = Sitelampe::all();
         // $sitelampe = Sitelampe::with('lampe')->find($sitelampe_id);
-        $lampe = Lampe ::all();
+        $lampe = lampe ::all();
         return view('page.dashboard.lampe.siteLampeList',compact('sitelampe','lampe'));
 
 
@@ -73,7 +73,7 @@ class SiteLampeController extends Controller
 
 
   }
-  public function Climatiseur($id){
+  public function lampe($id){
 
     $sitelampe = Sitelampe::findOrFail($id);
 
@@ -82,4 +82,55 @@ return view('page.dashboard.lampe.lampeAjout',compact('sitelampe'));
  }
 
 
+ public function lampeAction(Request $request){
+
+    $this->validate($request,[
+        'photo' => 'mimes:png,jpg,jpeg',
+        'watt' => 'required|numeric',
+        'marque' => 'required',
+        'modele' => 'required',
+        'type_lampe' => 'required',
+        'photo' => 'required',
+    ]);
+
+   if (isset($request->photo)) {
+    $filename = time().'.'. $request->photo->extension();
+      // Pour enregistré un fichier depuis request
+   $path =  $request->file('photo')->storeAs('photo_lampe',$filename,'public');
+   }
+
+
+
+
+    $lampe = new lampe();
+
+
+    $lampe->user_id = auth()->user()->id;
+    $lampe->sitelampe_id  = $request->sitelampe_id;
+    $lampe->marque = $request->marque;
+    $lampe->type_lampe = $request->type_lampe;
+    $lampe->watt = $request->watt;
+    $lampe->sommes_watt = $request->watt;
+    $lampe->photo = $path;
+//    dd($climatiseur);
+
+//   dd($pivot);
+
+$lampe->save();
+
+// dd($pivot);
+
+
+
+  return redirect()->back()->with('lampe','lampe ajouté');
+}
+
+public function lampeInfos($id){
+
+    $sitelampe = Sitelampe::findOrFail($id);
+    $lampe = lampe::where('sitelampe_id',$sitelampe->id)->get();
+
+    // return view('page.dashboard.lampe.Infos',compact('sitelampe','lampe'));
+
+}
 }

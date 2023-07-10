@@ -16,9 +16,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('sitelampe_id')->constrained();
             $table->string('marque');
-            $table->string('type_climatiseur');
-            $table->string('chevaux');
-            $table->string('sommes_chevaux');
+            $table->string('type_lampe');
+            $table->string('watt');
+            $table->string('sommes_watt');
             $table->string('photo')->nullable('cascade');
             $table->timestamps();
         });

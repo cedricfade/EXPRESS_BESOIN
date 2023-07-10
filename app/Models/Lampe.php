@@ -9,12 +9,8 @@ class Lampe extends Model
 {
     use HasFactory;
 
-    public function site(){
-        return $this->belongsTo(Site::class);
+    public function sitelampe(){
+
+        return $this->belongsTo(Sitelampe::class);
     }
-
-    // public function site(){
-
-    //     return $this->belongsTo(Site::class);
-    // }
 }
