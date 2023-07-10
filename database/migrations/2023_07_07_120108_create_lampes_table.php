@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('lampes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('sitelampe_id')->constrained();
+            $table->string('marque');
+            $table->string('type_climatiseur');
+            $table->string('chevaux');
+            $table->string('sommes_chevaux');
+            $table->string('photo')->nullable('cascade');
             $table->timestamps();
         });
     }

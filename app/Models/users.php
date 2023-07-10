@@ -9,4 +9,12 @@ class users extends Model
 {
     use HasFactory;
     protected $guarded = [''];
+
+    // public function site()
+    // {
+    //     return $this->hasOne(site::class);
+
+    // }
 }
+
+

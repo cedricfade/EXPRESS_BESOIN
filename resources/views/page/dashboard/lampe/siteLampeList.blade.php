@@ -60,7 +60,6 @@
               <h1>LISTE DES SITES</h1>
             </div>
 
-
             <img src="https://lottiefiles.com/28059-lamp-light" alt="">
 
             <!-- END Row #1 -->
@@ -79,6 +78,7 @@
                     <th>Ville</th>
                     <th>Commune</th>
                     <th>Nombre climatiseur</th>
+                    <th>Action</th>
 
                 </tr>
             </thead>
@@ -94,6 +94,9 @@
                 <td>
                   {{ $site->climatiseur->count()}}
 
+                </td>
+                <td>
+                    <a href="{{ route('climatiseur.infos',['id'=>$site->id,'libelle'=>Str::slug($site->libelle)]) }}">Voir <i class="fa fa-eye"></i></a>
                 </td>
 
             </tr>
@@ -113,6 +116,8 @@
                 </tr>
             </tfoot>
         </table>
+
+
 
 
         </div>

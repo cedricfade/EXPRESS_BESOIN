@@ -10,7 +10,7 @@
               </span>
               <a class="link-fx fw-bold tracking-wide mx-auto" href="{{ route('dashboard') }}">
                 <span class="smini-hidden">
-              
+
                   <span class="fs-4 text-dual">Lynays</span><span class="fs-4 text-primary">Entreprises</span>
                 </span>
               </a>
@@ -76,7 +76,7 @@
                   </a>
                 </li>
                 <li class="nav-main-heading" >CLIMATISEUR</li>
-             
+
                 <li class="nav-main-item">
                     <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
                       <img src="{{ asset('assets/anim icon/75551-air-conditioner.gif') }}" alt="" class="nav-main-link-icon " style="width: 4px">
@@ -97,7 +97,7 @@
                 </li>
 
                 <li class="nav-main-heading">LAMPE</li>
-             
+
                 <li class="nav-main-item">
                     <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
                      <img src="{{ asset('assets/anim icon/28059-lamp-light.gif') }}" alt="" class="nav-main-link-icon " style="width: 4px">
@@ -110,7 +110,7 @@
                         </a>
                       </li>
                       <li class="nav-main-item">
-                        <a class="nav-main-link" href="">
+                        <a class="nav-main-link" href="{{route('site.lampe.ajout')}}">
                           <span class="nav-main-link-name">Ajouter nouveau</span>
                         </a>
                       </li>
@@ -123,10 +123,10 @@
                     <span class="nav-main-link-name p-2 text-center" style="background-color: rgb(15, 30, 160); color:#fff">Ajouter un équipement    <i class=" fa fa-plast"></i></span>
                   </a>
                 </li> --}}
-            
-          
-             
-           
+
+
+
+
               </ul>
             </div>
             <!-- END Side Navigation -->
