@@ -68,8 +68,6 @@ Route::get('/climatiseur/infos/{id}/{libelle}',[SiteClimatiseurController::class
 
 //LAMPE ET CLIMATISEUR
 
-<<<<<<< HEAD
-=======
 Route::get('/site/lampe/new',[SiteLampeController::class,'siteLampeAjout'])->name('site.lampe.ajout');
  Route::post('/site/lampe/traitement',[SiteLampeController::class,'Sitelampe'])->name('site.lampe.traitement');
  Route::get('/site/lampe/view',[SiteLampeController::class,'SiteLampeView'])->name('site.lampe.view');
@@ -81,4 +79,3 @@ Route::get('/site/lampe/new',[SiteLampeController::class,'siteLampeAjout'])->nam
 // Route::get('/climatiseur/infos/{id}/{libelle}',[SiteClimatiseurController::class,'ClimatiseurInfos'])->name('climatiseur.infos');
 
 
->>>>>>> c593f5b9db11a5b3054a4c39e3b90e7c5fc83ecb

@@ -46,7 +46,7 @@
       <main id="main-container">
         <!-- Page Content -->
         <div class="content">
-          <div class="row">
+          <div class="row animate__animated animate__fadeInUp">
             <!-- Row #1 -->
             <div class="col-6 col-xl-6">
               <a class="block block-rounded block-link-shadow text-end" href="javascript:void(0)">
@@ -111,7 +111,7 @@
                 </div>
               </a>
             </div>
-            <livewire:counter></livewire:counter>
+         
 
 
 

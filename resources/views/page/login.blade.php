@@ -36,14 +36,14 @@
             </div>
           </div>
           <div class="hero-static col-md-6 col-xl-4 d-flex align-items-center bg-body-extra-light">
-            <div class="content content-full">
+            <div class="content content-full ">
 
               <!-- Header -->
-              <div class="px-4 py-2 mb-4">
-                <a class="link-fx fw-bold" href="index.html">
+              <div class="px-4 py-2 mb-4 animate__animated animate__fadeInUp">
+                <a class="link-fx fw-bold" href="">
              @if (session('login'))
 
-             <div class="bg"style="background: rgb(6, 136, 27); color: #fff">{{ session('login') }}</div>
+             <div class="bg animate__animated animate__fadeInDown p-2 text-center"style="background: rgb(6, 136, 27); color: #fff">{{ session('login') }}</div>
 
              @endif
 
@@ -52,13 +52,13 @@
 
                   <i class="fa fa-fire"></i>
 
-                  <span class="fs-4 text-body-color">Lynays</span><span class="fs-4">Entreprises</span>
+                  <span class="fs-4 text-body-color  ">Lynays</span><span class="fs-4">Entreprises</span>
                 </a>
-                <h1 class="h3 fw-bold mt-4 mb-2">Connexion au Dashboard</h1>
+                <h1 class="h3 fw-bold mt-4 mb-2 animate__animated">Connexion au Dashboard</h1>
                 <h2 class="h5 fw-medium text-muted mb-0">Connectez-vous svp!</h2>
                 @if (session('login_erreur'))
 
-                <span class="bg col-12"style="background: red; color: #fff">{{ session('login_erreur') }}</span>
+                <span class="bg col-12 p-1 mt-5"style="background: red; color: #fff">{{ session('login_erreur') }}</span>
 
                 @endif
               </div>
@@ -67,14 +67,14 @@
               <!-- Sign In Form -->
               <!-- jQuery Validation functionality is initialized with .js-validation-signin class in js/pages/op_auth_signin.min.js which was auto compiled from _js/pages/op_auth_signin.js -->
               <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
-              <form class="js-validation-signin px-4" action="{{ route('login.create') }}" method="POST">
+              <form class="js-validation-signin px-4 animate__animated animate__fadeInUp" action="{{ route('login.create') }}" method="POST">
                 @csrf
                 <div class="form-floating mb-4">
-                  <input type="text" class="form-control" id="login-username" name="email" placeholder="Enter your username">
+                  <input type="text" class="form-control" id="login-username" name="email" placeholder="Enter your username" required>
                   <label class="form-label" for="login-username">Email</label>
                 </div>
                 <div class="form-floating mb-4">
-                  <input type="password" class="form-control" id="login-password" name="password" placeholder="Enter your password">
+                  <input type="password" class="form-control" id="login-password" name="password" placeholder="Enter your password" required>
                   <label class="form-label" for="login-password">Mot de passe</label>
                 </div>
                 <div class="mb-4">

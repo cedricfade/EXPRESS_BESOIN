@@ -16,7 +16,7 @@ class DashboardController extends Controller
         $sites = Site::where('user_id',auth()->user()->id)->get();
         $sitee = Site::all();
         // $climatiseurs = climatiseur::where('user_id',auth()->user()->id)->get();
-        $climatiseurs =climatiseur::all();
+        $climatiseurs =climatiseur::where('user_id',auth()->user()->id)->get();
 
 
 

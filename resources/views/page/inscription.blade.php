@@ -27,8 +27,8 @@
           <div class="hero-static col-lg-6 col-xl-4">
             <div class="content content-full overflow-hidden">
               <!-- Header -->
-              <div class="py-4 text-center">
-                <a class="link-fx fw-bold" href="index.html">
+              <div class="py-4 text-center animate__animated animate__fadeInUp" >
+                <a class="link-fx fw-bold" href="">
                   <i class="fa fa-fire"></i>
                   <span class="fs-4 text-body-color">Lynays</span><span class="fs-4">Entreprises</span>
                 </a>
@@ -40,7 +40,7 @@
               <!-- Sign Up Form -->
               <!-- jQuery Validation functionality is initialized with .js-validation-signup class in js/pages/op_auth_signup.min.js which was auto compiled from _js/pages/op_auth_signup.js -->
               <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
-              <form class="js-validation-signup" action="{{ route('inscription.create') }}" method="POST"   enctype="multipart/form-data">
+              <form class="js-validation-signup animate__animated animate__fadeInUp" action="{{ route('inscription.create') }}" method="POST"   enctype="multipart/form-data">
                 @csrf
                 <div class="block block-themed block-rounded block-fx-shadow">
                   <div class="block-header bg-gd-emerald">
