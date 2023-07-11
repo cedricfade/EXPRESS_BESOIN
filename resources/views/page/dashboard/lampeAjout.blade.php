@@ -35,11 +35,11 @@
         Adding .smini-visible to an element will show it only when the sidebar is in mini mode
         Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
       -->
-   
+
       {{-- SIDEBAR --}}
       @include('page.dashboard.sidebar')
       <!-- Header -->
-  
+
       @include('page.dashboard.header')
       <!-- END Header -->
 
@@ -50,12 +50,12 @@
           <div class="row">
             <!-- Row #1 -->
             <div class="col-12 col-xl-12 text-center">
-              <h1>Informations du climatiseur</h1>
+              <h1>Informations de la lampe</h1>
             </div>
-        
+
             <!-- END Row #1 -->
           </div>
-          <form class="js-validation-signin" action="{{ route('climatiseur.action') }}" method="POST" enctype="multipart/form-data">
+          <form class="js-validation-signin" action="{{ route('lampe.action') }}" method="POST" enctype="multipart/form-data">
             @csrf
           <div class="row">
 
@@ -63,22 +63,19 @@
 
             @foreach ($errors->all() as $error)
             {{ $error }}
-                
+
             @endforeach
-                
+
             @endif
 
             <div class="col-3"></div>
             <div class="col-6">
-
-           
-                
             <div class="form">
                 <div class="form-floating mb-4" hidden>
-                    <input type="text" class="form-control" id="login-username" name="site_id" placeholder="Enter your username" value=" {{ $site->id }}" hidden>
-                    <label class="form-label" for="login-username">site_id</label>
+                    <input type="text" class="form-control" id="login-username" name="sitelampe_id" placeholder="Enter your username" value="{{$sitelampe->id}}" hidden>
+                    <label class="form-label" for="login-username">sitelampe_id</label>
                   </div>
-     
+
                 <div class="form-floating mb-4">
                   <input type="text" class="form-control" id="login-username" name="marque" placeholder="Enter your username" required>
                   <label class="form-label" for="login-username">Marque</label>
@@ -88,49 +85,46 @@
                   <label class="form-label" for="">Modèle</label>
                 </div>
                 <div class="form-floating mb-4">
-                    
-                    <select id="" class="form-control" name="type_climatiseur" required>
-                        <option value="" selected hidden>Choisir</option>
-                        <option value="Climatiseur monobloc">Climatiseur Monobloc</option>
-                        <option value="Climatiseur split">Climatiseur Split</option>
-                        <option value="Climatiseur réversible">Climatiseur Réversible</option>
-                        <option value="Climatiseur mobile">Climatiseur Mobile</option>
-                        <option value="Climatiseur fixe/mural">Climatiseur Fixe/Mural</option>
-                        <option value="Climatiseur cassette">Climatiseur Cassette</option>
 
+                    <select id="" class="form-control" name="type_lampe" required>
+                        <option value="" selected hidden>Choisir</option>
+                        <option value="Climatiseur monobloc">Lampes à incandescence</option>
+                        <option value="Climatiseur split">Lampes halogènes</option>
+                        <option value="Climatiseur réversible">Lampes fluocompactes</option>
+                        <option value="Climatiseur mobile">Lampes LED</option>
 
                     </select>
-                    <label class="form-label" for="">Type de climatiseur</label>
-                  
+                    <label class="form-label" for="">Type de lampe</label>
+
                   </div>
 
                   <div class="form-floating mb-4">
-                    <input type="name" class="form-control" id="login-password" name="puissance_electrique" placeholder="Enter your password" required>
-                    <label class="form-label" for="">Puissance électrique (kW)</label>
+                    <input type="name" class="form-control" id="login-password" name="watt" placeholder="Enter your password" required>
+                    <label class="form-label" for="">Puissance électrique (W)</label>
                   </div>
                   <div class="form-floating mb-4">
-                    <input type="name" class="form-control" id="login-password" name="puissance_frigorifique" placeholder="Enter your password" required>
-                    <label class="form-label" for="">Puissance frigorifique (kW)</label>
+                    <input type="name" class="form-control" id="login-password" name="" placeholder="Enter your password" required>
+                    <label class="form-label" for="">L’intensité lumineuse (cd)</label>
                   </div>
 
                   <div class="form-floating mb-4">
                     <input type="file" class="form-control" id="login-password"  placeholder="Enter your password" name="photo" required>
                     <label class="form-label" for="">Image étiquette</label>
                   </div>
-                
+
 
                   {{-- FIN INFORMATION CLIM --}}
 
                   <span id="climatiseurs">
-         
+
                   </span>
 
-                  
+
 
                   <script>
 
                   </script>
-                <div class="row g-sm mb-4"> 
+                <div class="row g-sm mb-4">
                   <div class="col-12 mb-2">
                     <button type="submit" class="btn btn-lg btn-alt-primary w-100 py-3 fw-semibold">
                    Sauvegarder
@@ -141,50 +135,50 @@
                        Réinitialiser
                       </button>
                   </div>
-             
+
                 </div>
-            
+
 
         </div>
             </div>
 
             <div class="col-3"></div>
-     
+
             <!-- END Row #2 -->
           </div>
         </form>
 
-        
 
 
- 
-         
-       
-             
+
+
+
+
+
             {{-- <input type="submit" value="valider" name="valider"> --}}
-             
-        
+
+
             {{-- <button onClick="champ()">ajouter un champ</button> --}}
             {{-- <script type="text/javascript">
- 
+
                 var i = 1;
-                 
+
                 function champ() {
-                 
+
                 i += 1;
-                     
-                var addfield = 
+
+                var addfield =
                 ' <span style="float:right">Ajout de Climatiseur</span> <br> <div class="form-floating mb-4"><input type="text" class="form-control" id="login-username" name="marque" placeholder="Enter your username" required> <label class="form-label" for="login-username">Marque</label></div> <div class="form-floating mb-4"><input type="text" class="form-control" id="login-password" name="modele" placeholder="Enter your password" required><label class="form-label" for="">Modèle</label></div> <div class="form-floating mb-4"><select id="" class="form-control" name="type_climatiseur" required> <option value="" selected hidden>Choisir</option><option value="Climatiseur monobloc">Climatiseur Monobloc</option><option value="Climatiseur split">Climatiseur Split</option><option value="Climatiseur réversible">Climatiseur Réversible</option><option value="Climatiseur mobile">Climatiseur Mobile</option><option value="Climatiseur fixe/mural">Climatiseur Fixe/Mural</option><option value="Climatiseur cassette">Climatiseur Cassette</option> </select><label class="form-label" for="">Type de climatiseur</label> </div>' ;
-                 
-                 
+
+
                 document.getElementById('climatiseurs').innerHTML +=addfield;
-                     
+
                 }
-                 
+
                 </script>
        --}}
-   
-   
+
+
         </div>
         <!-- END Page Content -->
       </main>
@@ -236,7 +230,7 @@
   timer: 2500,
 
 })
-  
+
     @endif
 
 

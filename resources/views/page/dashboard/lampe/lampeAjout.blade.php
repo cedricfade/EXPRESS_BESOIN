@@ -50,12 +50,12 @@
           <div class="row">
             <!-- Row #1 -->
             <div class="col-12 col-xl-12 text-center animate__animated animate__bounceInDown">
-              <h2>Informations du climatiseur</h2>
+              <h2>Informations de la lampe</h2>
             </div>
 
             <!-- END Row #1 -->
           </div>
-          <form class="js-validation-signin" action="{{ route('climatiseur.action') }}" method="POST" enctype="multipart/form-data">
+          <form class="js-validation-signin" action="{{ route('lampe.action') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
           <div class="row row animate__animated animate__bounceInUp">
@@ -69,8 +69,8 @@
 
             <div class="form animate__animated ">
                 <div class="form-floating mb-4" hidden>
-                    <input type="text" class="form-control" id="login-username" name="site_id" placeholder="Enter your username" value=" {{ $site->id }}" hidden>
-                    <label class="form-label" for="login-username">site_id</label>
+                    <input type="text" class="form-control" id="login-username" name="sitelampe_id" placeholder="Enter your username" value="{{$sitelampe->id }}" hidden>
+                    <label class="form-label" for="login-username">sitelampe_id</label>
 
                   </div>
 
@@ -81,10 +81,10 @@
                   <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
                   @enderror
-                  <span style="font-size: 12px;color:#868282">Exp:(Nasco, trame)</span>
+                  <span style="font-size: 12px;color:#868282">Exp:(lynays)</span>
                 </div>
                 <div class="form-floating mb-4">
-                  <input type="text" class="form-control" id="login-password" name="modele" placeholder="Enter your password" >
+                  <input type="text" class="form-control" id="login-password" name="modele" placeholder="modèle de lampe" >
                   <label class="form-label" for="">Modèle</label>
                   @error('modele')
                   <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
@@ -94,16 +94,16 @@
                 </div>
                 <div class="form-floating mb-4">
 
-                    <select id="" class="form-control" name="type_climatiseur" value='{{ old('type_climatiseur') }}'>
+                    <select id="" class="form-control" name="type_lampe" value='{{ old('type_lampe') }}'>
                         <option value="" selected hidden>Choisir</option>
-                        <option value="Climatiseur monobloc">Lampes à incandescence</option>
-                        <option value="Climatiseur split">Lampes halogènes</option>
-                        <option value="Climatiseur réversible">Lampes fluocompactes</option>
-                        <option value="Climatiseur mobile">Lampes LED</option>
+                        <option value="Lampes à incandescence">Lampes à incandescence</option>
+                        <option value="Lampes halogènes">Lampes halogènes</option>
+                        <option value="Lampes fluocompactes">Lampes fluocompactes</option>
+                        <option value="Lampes LED">Lampes LED</option>
 
                     </select>
                     <label class="form-label" for="">Type de la lampe</label>
-                    @error('type_climatiseur')
+                    @error('type_lampe')
                     <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
 
@@ -112,9 +112,9 @@
                   </div>
 
                   <div class="form-floating mb-4">
-                    <input type="name" class="form-control" id="login-password" name="chevaux" placeholder="Enter your password" >
+                    <input type="name" class="form-control" id="login-password" name="watt" placeholder="l’énergie électrique" >
                     <label class="form-label" for="">puissance</label>
-                    @error('chevaux')
+                    @error('watt')
                     <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
 
@@ -135,7 +135,7 @@
 
                   {{-- FIN INFORMATION CLIM --}}
 
-                  <span id="climatiseurs">
+                  <span id="lampes">
 
                   </span>
 
