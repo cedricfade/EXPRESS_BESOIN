@@ -60,8 +60,7 @@
               <h1>LISTE DES SITES</h1>
             </div>
 
-            <img src="https://lottiefiles.com/28059-lamp-light" alt="">
-
+            
             <!-- END Row #1 -->
           </div>
 
@@ -83,16 +82,17 @@
                 </tr>
             </thead>
             <tbody>
+          
 
 
               @foreach ($sites as $site)
 
               <tr>
-                <td style="text-transform: uppercase">{{ $site->libelle }}</td>
+                <td style="text-transform: uppercase">{{$site->libelle }}</td>
                 <td style="text-transform: uppercase">{{ $site->ville }}</td>
                 <td style="text-transform: uppercase">{{ $site->commune }}</td>
                 <td>
-                  {{ $site->climatiseur}}
+                  {{ $site->climatiseur->count()}}
 
                 </td>
                 <td>

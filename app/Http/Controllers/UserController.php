@@ -61,9 +61,12 @@ class UserController extends Controller
             'contact'=>'required',
             'password'=>'required|min:8',
             'password_confirmation'=>'required|same:password',
-            'photo' => 'required|mimes:png,jpg,jpeg|max:2048',
+            'photo' => 'required|mimes:png,jpg,jpeg|image',
+        
+            
         ]);
 
+     
 
 
     //   $user = users::create([

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('type_lampe');
             $table->string('watt');
             $table->string('sommes_watt');
-            $table->string('photo')->nullable('cascade');
+            $table->string('photo')->nullable()->onDelete('cascade');
             $table->timestamps();
         });
     }

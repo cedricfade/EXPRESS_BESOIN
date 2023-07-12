@@ -77,27 +77,34 @@
                     <th>Libelle</th>
                     <th>Ville</th>
                     <th>Commune</th>
-                    <th>Nombre de lampe</th>
+                    <th>Nombre de lampes Ajoutées</th>
                     <th>Action</th>
 
                 </tr>
             </thead>
             <tbody>
+           
 
 
-              @foreach ($sitelampe as $sitelampe)
+              @foreach ($sitelampes as $sitelampe)
 
               <tr>
                 <td style="text-transform: uppercase">{{ $sitelampe->libelle }}</td>
                 <td style="text-transform: uppercase">{{ $sitelampe->ville }}</td>
                 <td style="text-transform: uppercase">{{ $sitelampe->commune }}</td>
                 <td>
-                   {{$sitelampe->lampe}}
+
+                  {{ $sitelampe->lampe->count() }}
+         
+    
+               
 
                 </td>
                 <td>
                     <a href="{{ route('lampe.infos',['id'=>$sitelampe->id,'libelle'=>Str::slug($sitelampe->libelle)]) }}">Voir <i class="fa fa-eye"></i></a>
                 </td>
+
+                
 
             </tr>
 
@@ -111,7 +118,7 @@
                   <th>Libelle</th>
                   <th>Ville</th>
                   <th>Commune</th>
-                  <th>Nombre de lampe</th>
+                  <th>Nombre de lampes Ajoutées</th>
 
                 </tr>
             </tfoot>

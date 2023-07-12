@@ -8,6 +8,7 @@ use App\Http\Controllers\SiteLampeController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\SiteClimatiseurList;
 use App\Models\User;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,22 +37,8 @@ Route::get('/inscription',[UserController::class,'Inscription'])->name('inscript
 route::post('inscription.create',[UserController::class,'inscriptionAction'])->name('inscription.create');
 
 
-
-// Route::get('/equipement',[AjoutComposantController::class,'equipement'])->name('equipement');
-// Route::get('/climatiseur/{id}',[AjoutComposantController::class,'Climatiseur'])->name('climatiseur.ajout');
-
-
-
-
-// // SITE
-// Route::get('/site',[SiteController::class,'siteListe'])->name('site.liste');
-// Route::get('/site/view',[SiteController::class,'siteView'])->name('site.view');
-// // SITE climatiseur
-// Route::get('/site/ajout',[SiteController::class,'Ajoutsite'])->name('site.ajout');
-// Route::post('/traitement.site',[SiteController::class,'AjoutsiteAction'])->name('site.ajout.action');
-
-
 // CLIMATISEUR ET SITE
+Route::middleware(['auth'])->group(function () {
 
 Route::get('/site/climatiseur/new',[SiteClimatiseurController::class,'SiteClimatiseurAjout'])->name('site.climatiseur.ajout');
 Route::post('/site/climatiseur/traitement',[SiteClimatiseurController::class,'SiteClimatiseurTraitement'])->name('site.climatiseur.traitement');
@@ -63,12 +50,14 @@ Route::post('/climatiseur.action',[SiteClimatiseurController::class,'Climatiseur
 
 Route::get('/climatiseur/infos/{id}/{libelle}',[SiteClimatiseurController::class,'ClimatiseurInfos'])->name('climatiseur.infos');
 
-
+});
 
 
 //LAMPE ET CLIMATISEUR
 
-Route::get('/site/lampe/new',[SiteLampeController::class,'siteLampeAjout'])->name('site.lampe.ajout');
+
+Route::middleware(['auth'])->group(function () {
+ Route::get('/site/lampe/new',[SiteLampeController::class,'siteLampeAjout'])->name('site.lampe.ajout');
  Route::post('/site/lampe/traitement',[SiteLampeController::class,'Sitelampe'])->name('site.lampe.traitement');
  Route::get('/site/lampe/view',[SiteLampeController::class,'SiteLampeView'])->name('site.lampe.view');
  Route::get('/site/lampe/liste',[SiteLampeController::class,'siteLampeList'])->name('site.lampe.list');
@@ -79,3 +68,5 @@ Route::get('/site/lampe/new',[SiteLampeController::class,'siteLampeAjout'])->nam
  Route::get('/lampe/infos/{id}/{libelle}',[SiteLampeController::class,'lampeInfos'])->name('lampe.infos');
 
 
+
+});

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lampe;
-use App\Models\Sitelampe;
+use App\Models\Sitelampes;
 use Illuminate\Http\Request;
 
 class SiteLampeController extends Controller
@@ -22,7 +22,7 @@ class SiteLampeController extends Controller
             'ville'=> 'required',
         ]);
 
-            $sitelampe =new Sitelampe();
+            $sitelampe =new Sitelampes();
             $sitelampe->user_id=auth()->user()->id;
          $sitelampe->libelle = $request->libelle;
         $sitelampe->commune = $request->commune;
@@ -37,8 +37,8 @@ class SiteLampeController extends Controller
     }
 
     public function SiteLampeView(){
-        $sitelampe = Sitelampe::where('user_id',auth()->user()->id)->get()->sortDesc();
-        $lampe = lampe::all();
+        $sitelampe = Sitelampes::where('user_id',auth()->user()->id)->get()->sortDesc();
+        $lampe = Lampe::all();
 
         foreach ($lampe as $lampe) {
             $lampe;
@@ -53,29 +53,16 @@ class SiteLampeController extends Controller
     public function siteLampeList(){
 
 
-        $sitelampe = Sitelampe::where('user_id' , auth()->user()->id)->get()->sortDesc();
-        // $sitelampe = Sitelampe::all();
-        // $sitelampe = Sitelampe::with('lampe')->find($sitelampe_id);
-        $lampe = lampe ::all();
-        return view('page.dashboard.lampe.siteLampeList',compact('sitelampe','lampe'));
-
-
-    //     $sites = Site::where('user_id', auth()->user()->id)->get()->sortDesc();
-
-    //   //   $sites = Site::all();
-    //     // $sites = Site::with('climatiseurs')->find($site_id);
-
-
-    //     $climatiseurs = climatiseur::all();
-
-
-    //     return view('page.dashboard.climatisseur.siteList',compact('sites','climatiseurs'));
+        $sitelampes = Sitelampes::where('user_id', auth()->user()->id)->get()->sortDesc();
+        $lampe = Lampe::all();
+        return view('page.dashboard.lampe.siteLampeList',compact('sitelampes', 'lampe'));
 
 
   }
   public function lampe($id){
 
-    $sitelampe = Sitelampe::findOrFail($id);
+    $sitelampe = Sitelampes::findOrFail($id);
+    
 
 //     return view('page.dashboard.climatisseur.climatiseurAjout', compact('sitelampe'));
 return view('page.dashboard.lampe.lampeAjout',compact('sitelampe'));
@@ -102,7 +89,7 @@ return view('page.dashboard.lampe.lampeAjout',compact('sitelampe'));
 
 
 
-    $lampe = new lampe();
+    $lampe = new Lampe();
 
 
     $lampe->user_id = auth()->user()->id;
@@ -122,15 +109,15 @@ $lampe->save();
 
 
 
-  return redirect()->back()->with('lampe','lampe ajouté');
+  return redirect()->back()->with('lampe','lampe ajoutée avec succès');
 }
 
 public function lampeInfos($id){
 
-    $sitelampe = Sitelampe::findOrFail($id);
-    $lampe = lampe::where('sitelampe_id',$sitelampe->id)->get();
+    $sitelampe = Sitelampes::findOrFail($id);
+    $lampes = Lampe::where('sitelampe_id',$sitelampe->id)->get();
 
-    // return view('page.dashboard.lampe.Infos',compact('sitelampe','lampe'));
+    return view('page.dashboard.lampe.lampeInfos',compact('sitelampe','lampes'));
 
 }
 }

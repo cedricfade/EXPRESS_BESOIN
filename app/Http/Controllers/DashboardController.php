@@ -6,7 +6,7 @@ use App\Models\climatiseur;
 use App\Models\Lampe;
 use App\Models\pivot;
 use App\Models\Site;
-use App\Models\Sitelampe;
+use App\Models\Sitelampes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,8 +22,8 @@ class DashboardController extends Controller
 
 
 
-        $sitelampe = Sitelampe::where('user_id',auth()->user()->id)->get();
-        $sitelampe = Sitelampe::all();
+        $sitelampe = Sitelampes::where('user_id',auth()->user()->id)->get();
+        $sitelampe = Sitelampes::all();
         // $climatiseurs = climatiseur::where('user_id',auth()->user()->id)->get();
         $lampe =Lampe::all();
 

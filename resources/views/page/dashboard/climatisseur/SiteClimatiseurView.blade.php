@@ -62,13 +62,25 @@
 
                  
               <div class="form row animate__animated animate__bounceInUp">
-                 
-              
+
+           
+             
+             
+           
               
                     @foreach ($sites as $site)
 
                  
-                    <div class=" col-md-3 col-xl-3 pb-2 col-6 col-lg-3 col-sm-4 mx-auto ">
+                    <div class=" col-md-3 col-xl-3 pb-2 col-6 col-lg-3 col-sm-4 mx-auto" >
+                      {{-- @if ($site->id == $clime->id)
+                       
+                      hidden
+                      @else 
+
+                     
+                    @endif --}}
+
+                     
                         <a class="block block-rounded text-center" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}">
                           <div class="block-content block-content-full block-content-sm bg-primary">
                             <span class="fw-semibold text-white" style="text-transform: capitalize">{{ $site->libelle }}</span>
@@ -95,6 +107,8 @@
                         <a type="submit" class="btn_suivant btn btn-lg btn-alt-primary w-100 py-3 fw-semibold" href="{{ route('climatiseur.ajout',['id'=>$site->id]) }}" onclick="btnSuivant()">
                       Ajouter climatiseur
                       </a>
+             
+                     
 
                     
                       </div>
@@ -102,7 +116,7 @@
                      
                         
                     @endforeach
-                
+                   
                   
                 
                    

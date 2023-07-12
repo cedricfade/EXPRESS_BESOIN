@@ -46,25 +46,22 @@ class SiteClimatiseurController extends Controller
 
           $sites = Site::where('user_id', auth()->user()->id)->get()->sortDesc();
 
-        //   $sites = Site::all();
-          // $sites = Site::with('climatiseurs')->find($site_id);
+   
 
+       
 
-          $climatiseurs = climatiseur::all();
+         
 
-
-          return view('page.dashboard.climatisseur.siteList',compact('sites','climatiseurs'));
+          return view('page.dashboard.climatisseur.siteList',compact('sites'));
 
 
     }
     public function SiteClimatiseurView(){
         $sites = Site::where('user_id',auth()->user()->id)->get()->sortDesc();
         $climatiseurs = climatiseur::all();
+        
 
-        foreach ($climatiseurs as $climatiseur) {
-            $climatiseur;
-        }
-
+        
 
 
         return view('page.dashboard.climatisseur.SiteClimatiseurView', compact('sites','climatiseurs'));
@@ -101,6 +98,7 @@ public function ClimatiseurInfos($id){
             'modele' => 'required',
             'type_climatiseur' => 'required',
             'photo' => 'required',
+            
         ]);
 
        if (isset($request->photo)) {
@@ -126,11 +124,16 @@ public function ClimatiseurInfos($id){
         $climatiseur->chevaux = $request->chevaux;
         $climatiseur->sommes_chevaux = $cv* $request->chevaux;
         $climatiseur->photo = $path;
+
+        $site = new Site();
+        $site->status = ($request->site_id) ? 1 : 0;
+     
     //    dd($climatiseur);
+    //    dd($site);
 
-    //   dd($pivot);
+    $site->update();
 
-    $climatiseur->save();
+    // $climatiseur->save();
 
     // dd($pivot);
 

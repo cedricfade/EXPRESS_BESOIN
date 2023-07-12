@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('libelle');
             $table->string('commune');
             $table->string('ville');
+            $table->double('status')->default(0);
             $table->timestamps();
         });
     }

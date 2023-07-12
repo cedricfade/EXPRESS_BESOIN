@@ -241,11 +241,11 @@
 
 
 <script>
-  @if (session('clim'))
+  @if (session('lampe'))
   Swal.fire({
   position: 'top-end',
   icon: 'success',
-  title: "{{ session('clim') }}",
+  title: "{{ session('lampe') }}",
   showConfirmButton: false,
   timer: 2500,
 

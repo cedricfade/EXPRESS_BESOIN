@@ -21,12 +21,19 @@
     .ma-table tr{
      line-height: 2.3em;
 
-     padding-left: 15px !important
+     padding-left: 15.1px !important
+g
 
-
+    }
+    .ma-table th{
+        font-weight: 300;
+        text-decoration: underline;
     }
 
     .ma-table td{
+
+        font-size: 1.1em;
+        font-weight: bold
 
 
     }
@@ -73,10 +80,10 @@
                 <a class="block block-link-pop text-center" href="javascript:void(0)">
                     <div class="block-content">
                       <p class="fs-1 text-warning">
-                        <strong class="counter">{{ $sitelampe->lampe>count() }}</strong>
+                        <strong class="counter">{{ $sitelampe->lampe->count() }}</strong>
                       </p>
                       <p class="fw-medium">
-                        lampe(s)
+                        Lampe(s)
                       </p>
                     </div>
                   </a>
@@ -111,23 +118,23 @@
               <td>{{ $lampe->marque }} </td>
               </tr>
              <tr>
-              <th style="text-transform: capitalize">Type climatiseur : </th>
-              <td style="text-transform: capitalize">{{ $lampe->lampe }}</td>
+              <th style="text-transform: capitalize">Type lampe : </th>
+              <td style="text-transform: capitalize">{{ $lampe->type_lampe }}</td>
              </tr>
              <tr>
               <th style="text-transform: capitalize">Chevaux : </th>
-              <td style="text-transform: capitalize">{{ $lampe->watt }} Cv</td>
+              <td style="text-transform: capitalize">{{ $lampe->chevaux }} Cv</td>
              </tr>
              <tr>
-              <th style="text-transform: capitalize">Puissance en Kw : </th>
-              <td style="text-transform: capitalize">{{ $lampe->sommes_watt }} kw</td>
+              <th style="text-transform: capitalize">Puissance en Watt : </th>
+              <td style="text-transform: capitalize; background-color: #0d0c24;text-align: center; color:#fff; font-weight: 800"><span class="counter" style="font-size: 1.6em">{{ $lampe->watt }}</span> W</td>
              </tr>
 
 
 
              </table>
              <figure>
-            <a href="{{ Storage::url($lampe->photo) }}" > <img src="{{ Storage::url($lampe->photo) }}" alt=""  height="80px" width="20%" style="padding:5px; border: 1px solid"></a>
+            <a href="{{ Storage::url($lampe->photo) }}" > <img src="{{ Storage::url($lampe->photo) }}" alt=""   style="padding:5px; border: 1px solid; max-width: 80px;"></a>
 
             </figure>
             </div>
@@ -136,7 +143,7 @@
 
             @empty
                <div class="col-xl-12 bg-info p-3 text-light text-center">
-                <span style="font-size: 1.3em">Vous n'avez pas de climatiseur disponible ! <a href="{{ route('site.lampe.view') }}" style="text-decoration: underline;color:#fff">Ajouter</a></span>
+                <span style="font-size: 1.3em">Vous n'avez pas de lampe disponible ! <a href="{{ route('site.lampe.view') }}" style="text-decoration: underline;color:#fff">Ajouter</a></span>
 
                </div>
             @endforelse

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('type_climatiseur');
             $table->string('chevaux');
             $table->string('sommes_chevaux');
-            $table->string('photo')->nullable('cascade');
+            $table->string('photo')->nullable()->onDelete('cascade');
             $table->timestamps();
         });
     }
