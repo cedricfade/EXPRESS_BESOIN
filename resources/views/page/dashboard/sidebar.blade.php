@@ -1,3 +1,9 @@
+<style>
+  #sidebar{
+    background-color: #f3efef
+  }
+</style>
+   
    <nav id="sidebar" class="">
         <!-- Sidebar Content -->
         <div class="sidebar-content">
@@ -33,7 +39,7 @@
           <!-- Sidebar Scrolling -->
           <div class="js-sidebar-scroll">
             <!-- Side User -->
-            <div class="content-side content-side-user px-0 py-0">
+            <div class="content-side content-side-user px-0 py-0"  style="background: rgb(233, 233, 233)">
               <!-- Visible only in mini mode -->
               <div class="smini-visible-block animated fadeIn px-3">
                 <img class="img-avatar img-avatar32" src="{{ Storage::url(auth()->user()->photo) }}" alt="">
