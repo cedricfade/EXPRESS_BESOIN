@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('site_id')->constrained();
             $table->string('marque');
             $table->string('type_climatiseur');
+            $table->string('type_split')->nullable();
             $table->string('chevaux');
             $table->string('sommes_chevaux');
             $table->string('photo')->nullable()->onDelete('cascade');

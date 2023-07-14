@@ -119,16 +119,19 @@ g
               </tr>
              <tr>
               <th style="text-transform: capitalize">Type climatiseur : </th>
-              <td style="text-transform: capitalize">{{ $climatiseur->type_climatiseur }}</td>
+              <td style="text-transform: capitalize">{{ $climatiseur->type_climatiseur }}  <span style="font-size: 12px; color:#221ba1">   ({{ $climatiseur->type_split }})</span></td>
              </tr>
+             
              <tr>
               <th style="text-transform: capitalize">Chevaux : </th>
               <td style="text-transform: capitalize">{{ $climatiseur->chevaux }} Cv</td>
              </tr>
              <tr>
               <th style="text-transform: capitalize">Puissance en Kw : </th>
-              <td style="text-transform: capitalize; background-color: #0d0c24;text-align: center; color:#fff; font-weight: 800"><span class="counter" style="font-size: 1.6em">{{ $climatiseur->sommes_chevaux }}</span> kw</td>
+              <td style="text-transform: capitalize; background-color: #0d0c24;text-align: center; color:#fff; font-weight: 800"><span class="counter" style="font-size: 1.3em">{{ $climatiseur->sommes_chevaux }}</span> kw</td>
              </tr>
+
+             
 
 
 

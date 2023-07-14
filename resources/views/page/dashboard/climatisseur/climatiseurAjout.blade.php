@@ -50,6 +50,7 @@
           <div class="row">
             <!-- Row #1 -->
             <div class="col-12 col-xl-12 text-center animate__animated animate__bounceInDown">
+
               <h2>Informations du climatiseur</h2>
             </div>
 
@@ -94,7 +95,7 @@
                 </div> --}}
                 <div class="form-floating mb-4">
 
-                    <select id="" class="form-control" name="type_climatiseur" value='{{ old('type_climatiseur') }}' style="text-transform:Capitalize">
+                    <select id="" class="form-control" name="type_climatiseur" value='{{ old('type_climatiseur') }}' style="text-transform:Capitalize" onchange="split(this.value)">
                         <option value="" selected hidden>Choisir</option>
                         <option value="Climatiseur monobloc">Climatiseur Monobloc</option>
                         <option value="Climatiseur split">Climatiseur Split</option>
@@ -109,6 +110,49 @@
                     </select>
                     <label class="form-label" for="">Type de climatiseur</label>
                     @error('type_climatiseur')
+                    <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
+
+
+                    @enderror
+
+                  </div>
+
+                  <style>
+                    .split-form{
+                      display: none
+                    }
+                  </style>
+
+                  <script>
+                    
+                    function split(val){
+
+                      if (val == "Climatiseur split") {
+                        document.querySelector('.split-form').style.display="block"
+
+                        
+                      }
+
+                      else
+
+                      document.querySelector('.split-form').style="display:none"
+
+                    }
+                  </script>
+
+                  <div class="form-floating mb-4 split-form">
+
+                    <select id="" class="form-control" name="type_split" value='{{ old('type_climatiseur') }}' style="text-transform:Capitalize; border:2px solid #2a1975">
+                        <option value="" selected hidden>Choisir</option>
+                        <option value="Split Mural">Split Mural</option>
+                        <option value="Split Cassette">Split Cassette</option>
+                        <option value="Split Armoire">Split Armoire</option>
+                
+
+
+                    </select>
+                    <label class="form-label" for="">Split</label>
+                    @error('type_split')
                     <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
 

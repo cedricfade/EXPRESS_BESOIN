@@ -57,7 +57,7 @@ class SiteClimatiseurController extends Controller
 
     }
     public function SiteClimatiseurView(){
-        $sites = Site::where('user_id',auth()->user()->id)->get()->sortDesc();
+        $sites = Site::where('user_id',auth()->user()->id)->orderBy('id','desc')->limit(1)->get();
         $climatiseurs = climatiseur::all();
         
 
@@ -95,8 +95,8 @@ public function ClimatiseurInfos($id){
             'photo' => 'mimes:png,jpg,jpeg',
             'chevaux' => 'required|numeric',
             'marque' => 'required',
-            'modele' => 'required',
             'type_climatiseur' => 'required',
+          
             'photo' => 'required',
             
         ]);
@@ -121,6 +121,7 @@ public function ClimatiseurInfos($id){
         $climatiseur->site_id  = $request->site_id;
         $climatiseur->marque = $request->marque;
         $climatiseur->type_climatiseur = $request->type_climatiseur;
+        $climatiseur->type_split = $request->type_split;
         $climatiseur->chevaux = $request->chevaux;
         $climatiseur->sommes_chevaux = $cv* $request->chevaux;
         $climatiseur->photo = $path;
