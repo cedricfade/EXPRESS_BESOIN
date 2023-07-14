@@ -83,7 +83,7 @@
                   @enderror
                   <span style="font-size: 12px;color:#868282">Exp:(Nasco, trame)</span>
                 </div>
-                <div class="form-floating mb-4">
+                {{-- <div class="form-floating mb-4">
                   <input type="text" class="form-control" id="login-password" name="modele" placeholder="Enter your password" value="{{old('modele')}}" style="text-transform:Capitalize">
                   <label class="form-label" for="">Modèle</label>
                   @error('modele')
@@ -91,7 +91,7 @@
 
 
                   @enderror
-                </div>
+                </div> --}}
                 <div class="form-floating mb-4">
 
                     <select id="" class="form-control" name="type_climatiseur" value='{{ old('type_climatiseur') }}' style="text-transform:Capitalize">
@@ -102,6 +102,8 @@
                         <option value="Climatiseur mobile">Climatiseur Mobile</option>
                         <option value="Climatiseur fixe/mural">Climatiseur Fixe/Mural</option>
                         <option value="Climatiseur cassette">Climatiseur Cassette</option>
+                        <option value="Climatiseur VRV">Climatiseur VRV</option>
+                        <option value="Climatiseur gainable">Climatiseur gainable</option>
 
 
                     </select>

@@ -125,15 +125,14 @@ public function ClimatiseurInfos($id){
         $climatiseur->sommes_chevaux = $cv* $request->chevaux;
         $climatiseur->photo = $path;
 
-        $site = new Site();
-        $site->status = ($request->site_id) ? 1 : 0;
+        // $site = new Site();
+        // $site->status = ($request->site_id) ? 1 : 0;
      
     //    dd($climatiseur);
     //    dd($site);
 
-    $site->update();
 
-    // $climatiseur->save();
+    $climatiseur->save();
 
     // dd($pivot);
 

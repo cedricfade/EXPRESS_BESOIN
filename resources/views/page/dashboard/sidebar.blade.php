@@ -1,10 +1,18 @@
 <style>
   #sidebar{
-    background-color: #f3efef
+    background: rgb(253, 253, 253);
+     box-shadow: none !important
+  }
+
+  .nav-main-item a{
+    font-size: 15px
+  }
+  .nav-main-item img{
+    width: 20px
   }
 </style>
    
-   <nav id="sidebar" class="">
+   <nav id="sidebar" class="" style="">
         <!-- Sidebar Content -->
         <div class="sidebar-content">
           <!-- Side Header -->
@@ -53,11 +61,11 @@
                 </a>
                 <ul class="list-inline mt-3 mb-0">
                   <li class="list-inline-item">
-                    <a class="link-fx text-dual fs-sm fw-semibold text-uppercase" href="{{ route('dashboard') }}">    <span >  {{ auth()->user()->nom }}. {{ auth()->user()->prenom }} </span></a>
+                    <a class="link-fx  fs-sm fw-semibold text-uppercase" href="{{ route('dashboard') }}" style="color: #222222">    <span >  {{ auth()->user()->nom }} {{ auth()->user()->prenom }} </span></a>
                   </li>
                   <li class="list-inline-item">
                     <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                    <a class="link-fx text-dual" data-toggle="layout" data-action="dark_mode_toggle" href="javascript:void(0)">
+                    <a class="link-fx text-secondary" data-toggle="layout" data-action="dark_mode_toggle" href="javascript:void(0)">
                       <i class="fa fa-burn"></i>
                     </a>
                   </li>
@@ -85,7 +93,7 @@
 
                 <li class="nav-main-item">
                     <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                      <img src="{{ asset('assets/anim icon/75551-air-conditioner.gif') }}" alt="" class="nav-main-link-icon " style="width: 4px">
+                      <img src="{{ asset('assets/icone/climatisation.png') }}" alt="" class="nav-main-link-icon ">
                       <span class="nav-main-link-name">Climatiseur</span>
                     </a>
                     <ul class="nav-main-submenu">
@@ -106,7 +114,7 @@
 
                 <li class="nav-main-item">
                     <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                     <img src="{{ asset('assets/anim icon/28059-lamp-light.gif') }}" alt="" class="nav-main-link-icon " style="width: 4px">
+                     <img src="{{ asset('assets/icone/ampoule.png') }}" alt="" class="nav-main-link-icon ">
                       <span class="nav-main-link-name">Lampe</span>
                     </a>
                     <ul class="nav-main-submenu">
