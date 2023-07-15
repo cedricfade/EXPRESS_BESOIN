@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AjoutComposantController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EquipementController;
 use App\Http\Controllers\SiteClimatiseurController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\SiteLampeController;
@@ -66,7 +67,10 @@ Route::middleware(['auth'])->group(function () {
  Route::post('/lampe.action',[SiteLampeController::class,'lampeAction'])->name('lampe.action');
 
  Route::get('/lampe/infos/{id}/{libelle}',[SiteLampeController::class,'lampeInfos'])->name('lampe.infos');
+});
 
 
-
+Route::middleware(['auth'])->group(function () {
+    Route::get('/equipement/ajout',[EquipementController::class,'equipementAjout'])->name('equipement.ajout');
+    Route::get('/equipement',[EquipementController::class,'all'])->name('equipement.all');
 });

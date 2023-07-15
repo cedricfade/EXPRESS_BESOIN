@@ -131,6 +131,26 @@
                     </ul>
                 </li>
 
+                <li class="nav-main-item">
+                  <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#" style="background-color: #1d59a7; color:#fff">
+                  
+                    <span class="nav-main-link-name">Ajouter Equipement</span>
+                  </a>
+
+                  <ul class="nav-main-submenu">
+                    <li class="nav-main-item">
+                      <a class="nav-main-link" href="{{route('equipement.all')}}">
+                        <span class="nav-main-link-name">Liste des sites</span>
+                      </a>
+                    </li>
+                    <li class="nav-main-item">
+                      <a class="nav-main-link" href="{{route('equipement.ajout')}}">
+                        <span class="nav-main-link-name">Ajouter nouveau</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
 
                 {{-- <li class="nav-main-item">
                   <a class="nav-main-link" href="{{ route('equipement') }}">
