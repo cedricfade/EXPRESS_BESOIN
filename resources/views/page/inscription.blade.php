@@ -10,6 +10,9 @@
 
 
 </head>
+<style>
+ 
+</style>
 <body>
     <style>
         .inscription{
@@ -43,7 +46,7 @@
               <form class="js-validation-signup animate__animated animate__fadeInUp" action="{{ route('inscription.create') }}" method="POST"   enctype="multipart/form-data">
                 @csrf
                 <div class="block block-themed block-rounded block-fx-shadow">
-                  <div class="block-header bg-gd-emerald">
+                  <div class="block-header"  style=" background: linear-gradient(20deg, #6055c5, #2e2674);"  >
                     <h3 class="block-title">Veuillez entrer vos informations</h3>
 
                   </div>

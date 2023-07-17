@@ -1,4 +1,9 @@
-    <header id="page-header">
+<style>
+  #page-header{
+    background: linear-gradient(20deg, #6055c5, #2e2674);
+  }
+</style>
+<header id="page-header">
         <!-- Header Content -->
         <div class="content-header">
           <!-- Left Section -->
@@ -26,7 +31,7 @@
             <div class="dropdown d-inline-block">
               <button type="button" class="btn btn-sm btn-alt-secondary" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-user d-sm-none"></i>
-                <span class="d-none d-sm-inline-block fw-semibold" style="text-transform: capitalize">{{ auth()->user()->nom }}. {{ auth()->user()->prenom }}</span>
+                <span class="d-none d-sm-inline-block fw-semibold" style="text-transform: capitalize">{{ auth()->user()->nom }} {{ auth()->user()->prenom }}</span>
                 <i class="fa fa-angle-down opacity-50 ms-1"></i>
               </button>
               <div class="dropdown-menu dropdown-menu-md dropdown-menu-end p-0" aria-labelledby="page-header-user-dropdown">

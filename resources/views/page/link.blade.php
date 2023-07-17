@@ -11,3 +11,9 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 @livewireStyles
+<style>
+  body{
+    background: linear-gradient(30deg, rgb(218, 221, 224), rgba(241, 241, 241, 0.979));
+
+  }
+ </style>

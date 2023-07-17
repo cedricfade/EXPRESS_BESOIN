@@ -10,6 +10,17 @@
 
 
 </head>
+
+<style>
+  .content{
+    background: linear-gradient(20deg, #6055c5, #0f0846);
+    border-radius: 3px;
+  }
+
+  .content h1,h2,h3,a{
+    color: #fff !important
+  }
+</style>
 <body>
     <style>
         .inscription{
@@ -22,12 +33,13 @@
     <!-- Main Container -->
     <main id="main-container">
       <!-- Page Content -->
-      <div class="bg-image" style="background-image: url('assets/media/photos/photo34@2x.jpg');">
+      <div class="bg-image" style="background-image: linear-gradient(to right, rgba(6, 2, 24, 0.651),rgba(3, 7, 59, 0.979)),url('{{ asset('assets/image/solar.jpeg') }}')">
         <div class="row mx-0 bg-black-50">
-          <div class="hero-static col-md-6 col-xl-8 d-none d-md-flex align-items-md-end">
-            <div class="p-4">
+          <div class="hero-static col-md-6 col-xl-8 d-none d-md-flex align-items-md-end " >
+            <div class="p-4 " style="color:#fff">
 
-              <p class="fs-3 fw-semibold text-white">
+
+              <p class="fs-3 fw-semibold text-white ">
                By Lynays Entreprises
               </p>
               <p class="text-white-75 fw-medium">
@@ -36,7 +48,7 @@
             </div>
           </div>
           <div class="hero-static col-md-6 col-xl-4 d-flex align-items-center bg-body-extra-light">
-            <div class="content content-full ">
+            <div class="content content-full " style="">
 
               <!-- Header -->
               <div class="px-4 py-2 mb-4 animate__animated animate__fadeInUp">
@@ -52,10 +64,10 @@
 
                   <i class="fa fa-fire"></i>
 
-                  <span class="fs-4 text-body-color  ">Lynays</span><span class="fs-4">Entreprises</span>
+                  <span class="fs-4 text-body-color  " style="color: rgb(26, 97, 179) !important">Lynays</span> <span class="fs-4">Entreprises</span>
                 </a>
-                <h1 class="h3 fw-bold mt-4 mb-2 animate__animated">Connexion au Dashboard</h1>
-                <h2 class="h5 fw-medium text-muted mb-0">Connectez-vous svp!</h2>
+                <h1 class="h3 fw-bold mt-4 mb-2 animate__animated d-block" style="width: 50%; text-align: left">Connexion au Dashboard</h1>
+                {{-- <h2 class="h5 fw-medium text-muted mb-0">Connectez-vous svp!</h2> --}}
                 @if (session('login_erreur'))
 
                 <span class="bg col-12 p-1 mt-5"style="background: red; color: #fff">{{ session('login_erreur') }}</span>
@@ -77,22 +89,17 @@
                   <input type="password" class="form-control" id="login-password" name="password" placeholder="Enter your password" required>
                   <label class="form-label" for="login-password">Mot de passe</label>
                 </div>
+                
                 <div class="mb-4">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="login-remember-me" name="login-remember-me" checked>
-                    <label class="form-check-label" for="login-remember-me">Se souvenir de moi</label>
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <button type="submit" class="btn btn-lg btn-alt-primary fw-semibold">
+                  <button type="submit" class="btn btn-lg btn-alt-primary fw-semibold" style="border-radius: 0px">
                 Connexion
                   </button>
                   <div class="mt-4">
-                    <a class="fs-sm fw-medium link-fx text-muted me-2 mb-1 d-inline-block" href="{{ route('inscription') }}">
+                    <a class="fs-sm fw-medium link-fx me-2 mb-1 d-inline-block" href="{{ route('inscription') }}">
                       Créer un compte
                     </a>
-                    <a class="fs-sm fw-medium link-fx text-muted me-2 mb-1 d-inline-block" href="op_auth_reminder2.html">
-                      Mot de passe oublié
+                    <a class="fs-sm fw-medium link-fx  me-2 mb-1 d-inline-block" href="op_auth_reminder2.html">
+                      Mot de passe oublié ?
                     </a>
                   </div>
 
