@@ -100,45 +100,71 @@
 
                        {{ $climatiseurs->count() }}
                       </span>
-
-
-
-
-
                     </div>
                     <div class="fs-sm fw-semibold text-uppercase text-muted">Climatiseur(s)</div>
                   </div>
                 </div>
               </a>
             </div>
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </div>
+         </div>
         </div>
         <!-- END Page Content -->
       </main>
       <!-- END Main Container -->
+
+
+      <main id="main-container">
+        <!-- Page Content -->
+        <div class="content">
+          <div class="row animate__animated animate__fadeInUp">
+            <!-- Row #1 -->
+            <div class="col-6 col-xl-6">
+              <a class="block block-rounded block-link-shadow text-end" href="javascript:void(0)">
+                <div class="block-content block-content-full d-sm-flex justify-content-between align-items-center">
+                  <div class="d-none d-sm-block">
+                    <i class="fa fa-shopping-bag fa-2x opacity-25"></i>
+                  </div>
+                  <div>
+                    <div class="fs-3 fw-semibold">
+                      <p class="counter" style="font-size: 1.6em">{{ $sitelampe->count() }}</p>
+
+                    </div>
+                    <div class="fs-sm fw-semibold text-uppercase text-muted">Sitelampe(s)</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-6 col-xl-6">
+              <a class="block block-rounded block-link-shadow text-end" href="javascript:void(0)">
+                <div class="block-content block-content-full d-sm-flex justify-content-between align-items-center">
+                  <div class="d-none d-sm-block">
+                    <i class="fa fa-shopping-bag fa-2x opacity-25"></i>
+                  </div>
+                  <div>
+
+                    <div class="fs-3 fw-semibold">
+                      <p>
+
+
+
+
+
+
+                       <span class="counter" style="font-size: 1.6em">
+
+                       {{ $lampe->count() }}
+                      </span>
+                    </div>
+                    <div class="fs-sm fw-semibold text-uppercase text-muted">lampe(s)</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+         </div>
+        </div>
+        <!-- END Page Content -->
+      </main>
 
       <!-- Footer -->
 
