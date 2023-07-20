@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('equipements', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->string('libelle');
+            $table->string('ville');
+            $table->string('commune');
+            $table->string('type_appareil');
+            $table->string('marque');
+            $table->string('puissance');
             $table->timestamps();
         });
     }

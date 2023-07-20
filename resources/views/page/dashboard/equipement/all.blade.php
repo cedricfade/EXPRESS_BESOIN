@@ -56,7 +56,7 @@
         <div class="content">
           <div class="row">
             <!-- Row #1 -->
-           
+
 
             <img src="https://lottiefiles.com/28059-lamp-light" alt="">
 
@@ -66,8 +66,8 @@
 
           <div class="row">
 
-  
-          
+
+
 
           <div class="col-xl-7">
             <table id="example" class="table table-striped" style="width:100%">
@@ -78,12 +78,12 @@
                         <th>Commune</th>
                         <th>Nombre de lampes Ajoutées</th>
                         <th>Action</th>
-    
+
                     </tr>
                 </thead>
                 <tbody>
-               
-    
+
+
           <tr>
            <td>1</td>
            <td>1</td>
@@ -91,7 +91,7 @@
            <td>1</td>
            <td>1</td>
           </tr>
-    
+
                 </tbody>
                 <tfoot>
                     <tr>
@@ -99,18 +99,18 @@
                       <th>Ville</th>
                       <th>Commune</th>
                       <th>Nombre de lampes Ajoutées</th>
-    
+
                     </tr>
                 </tfoot>
             </table>
-    
+
           </div>
           <div class="col-xl-1"></div>
 
           <style>
             .form-act{
                 display: none;
-                
+
             }
 
             .btn-act{
@@ -133,14 +133,14 @@
             }
           </script>
 
-       
+
 
 
 
 
 
           <div class="col-xl-4 " >
-   
+
             <section class="wizard-section p-3 form-act" style="background: #e0d9e4; box-shadow: 0px 0px 9px 5px rgba(0, 0, 0, 0.185)">
                 <div class="row no-gutters">
                   <div class="col-lg-12 col-md-12">
@@ -150,13 +150,13 @@
                   </div>
                   <div class="col-lg-12 col-md-12">
                     <div class="form-wizard">
-                      <form action="" method="post" role="form">
+                      <form action="{{route('equipement.ajout.traitement')}}" method="post" role="form">
                         <div class="form-wizard-header">
-                          
+
                           <ul class="list-unstyled form-wizard-steps clearfix">
                             <li class="active"><span>1</span></li>
                             <li><span>2</span></li>
-                        
+
                           </ul>
                         </div>
                         <fieldset class="wizard-fieldset show">
@@ -171,7 +171,7 @@
                             <label for="lname" class="wizard-form-text-label">Ville*</label>
                             <div class="wizard-form-error"></div>
                           </div>
-                      
+
                           <div class="form-group">
                             <input type="text" class="form-control wizard-required" id="zcode" name="commune">
                             <label for="zcode" class="wizard-form-text-label">Commune*</label>
@@ -180,7 +180,7 @@
                           <div class="form-group clearfix">
                             <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
                           </div>
-                        </fieldset> 
+                        </fieldset>
                         <fieldset class="wizard-fieldset">
                           <h5>Information de l'équipement</h5>
                           <div class="form-group">
@@ -199,18 +199,18 @@
                             <div class="wizard-form-error"></div>
                             <span class="wizard-password-eye"><i class="far fa-eye"></i></span>
                           </div>
-                      
-                
-                    
-              
-                       
-                     
+
+
+
+
+
+
                           <div class="form-group clearfix">
                             <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
                             {{-- <a href="javascript:;" class="form-wizard-submit float-right">Submit</a> --}}
                             <input type="submit" class="form-wizard-submit float-right" value="Enregistrer">
                           </div>
-                        </fieldset> 
+                        </fieldset>
                       </form>
                     </div>
                   </div>
@@ -218,10 +218,10 @@
               </section>
 
               <button class="btn-act btn" value="active" onclick="act(this.value)">Ajouter un équipement</button>
-    
+
           </div>
 
-      
+
 
           </div>
 

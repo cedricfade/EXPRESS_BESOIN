@@ -28,11 +28,11 @@
       }
       .block-content{
         background: linear-gradient(60deg, rgb(56, 117, 170), rgb(66, 99, 146));
-       
+
         color: #fff !important;
 
         transition: all 0.3s ease-in !important
-        
+
       }
 
       .block:hover{
@@ -44,7 +44,7 @@
         background: rgb(255, 255, 255) !important;
         color: #01010a !important;
         border: 1px solid rgb(8, 70, 121);
-      
+
       border-radius: 50%;
       padding:5px
 
@@ -90,13 +90,13 @@
         <div class="content">
        <div class="container">
         <div class="row">
-          
+
           {{-- CLIMATISEUR --}}
           <div class="col-xl-5">
             <div class="row pt-3 row-info  animate__animated animate__fadeIn">
               <!-- Row #1 -->
-              
-            
+
+
              <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 d-block ">
               <div class="col-12 col-xl-10 col-md-8 col-lg-8 col-sm-8">
                 <a class="block block-rounded block-link-shadow text-end" href="javascript:void(0)">
@@ -106,7 +106,7 @@
                     </div>
                     <div>
                       <div class="fs-3 fw-semibold"> <span class="counter" style="font-size: 1.6em;">
-  
+
                         {{ $sites->count() }}
                        </span>
                       </div>
@@ -123,7 +123,7 @@
                     </div>
                     <div>
                       <div class="fs-3 fw-semibold"> <span class="counter" style="font-size: 1.6em;">
-  
+
                         {{ $climatiseurs->count() }}
                        </span>
                       </div>
@@ -137,7 +137,7 @@
              <div class="col-1 col-lg-4">
               <img src="{{ asset('assets/anim icon/clim.gif') }}" alt="" srcset="" style="width: 150px" class="mt-5">
              </div>
-          
+
             </div>
           </div>
 
@@ -146,8 +146,8 @@
           <div class="col-xl-5">
             <div class="row pt-3 row-info animate__animated animate__fadeIn">
               <!-- Row #1 -->
-              
-            
+
+
              <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 d-block">
               <div class="col-12 col-xl-10 col-md-8 col-lg-8 col-sm-8 ">
                 <a class="block block-rounded block-link-shadow text-end" href="javascript:void(0)">
@@ -157,7 +157,7 @@
                     </div>
                     <div>
                       <div class="fs-3 fw-semibold"> <span class="counter" style="font-size: 1.6em;">
-  
+
                         {{ $sitelampe->count() }}
                        </span>
                       </div>
@@ -174,7 +174,7 @@
                     </div>
                     <div>
                       <div class="fs-3 fw-semibold"> <span class="counter" style="font-size: 1.6em;">
-  
+
                         {{ $lampe->count() }}
                        </span>
                       </div>
@@ -188,7 +188,7 @@
              <div class="col-1 col-lg-4">
               <img src="{{ asset('assets/anim icon/lampe.gif') }}" alt="" srcset="" style="width: 140px" class="mt-5">
              </div>
-          
+
             </div>
           </div>
 
@@ -196,8 +196,8 @@
 
           {{-- LAMPE --}}
 
-         
-     
+
+
 
 
         </div>
@@ -206,6 +206,60 @@
         <!-- END Page Content -->
       </main>
       <!-- END Main Container -->
+
+
+      <main id="main-container">
+        <!-- Page Content -->
+        <div class="content">
+          <div class="row animate__animated animate__fadeInUp">
+            <!-- Row #1 -->
+            <div class="col-6 col-xl-6">
+              <a class="block block-rounded block-link-shadow text-end" href="javascript:void(0)">
+                <div class="block-content block-content-full d-sm-flex justify-content-between align-items-center">
+                  <div class="d-none d-sm-block">
+                    <i class="fa fa-shopping-bag fa-2x opacity-25"></i>
+                  </div>
+                  <div>
+                    <div class="fs-3 fw-semibold">
+                      <p class="counter" style="font-size: 1.6em">{{ $sitelampe->count() }}</p>
+
+                    </div>
+                    <div class="fs-sm fw-semibold text-uppercase text-muted">Sitelampe(s)</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-6 col-xl-6">
+              <a class="block block-rounded block-link-shadow text-end" href="javascript:void(0)">
+                <div class="block-content block-content-full d-sm-flex justify-content-between align-items-center">
+                  <div class="d-none d-sm-block">
+                    <i class="fa fa-shopping-bag fa-2x opacity-25"></i>
+                  </div>
+                  <div>
+
+                    <div class="fs-3 fw-semibold">
+                      <p>
+
+
+
+
+
+
+                       <span class="counter" style="font-size: 1.6em">
+
+                       {{ $lampe->count() }}
+                      </span>
+                    </div>
+                    <div class="fs-sm fw-semibold text-uppercase text-muted">lampe(s)</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+         </div>
+        </div>
+        <!-- END Page Content -->
+      </main>
 
       <!-- Footer -->
 

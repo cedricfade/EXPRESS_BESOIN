@@ -72,5 +72,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/equipement/ajout',[EquipementController::class,'equipementAjout'])->name('equipement.ajout');
+    Route::post('/equipement/ajout/traitement',[EquipementController::class,'equipement'])->name('equipement.ajout.traitement');
     Route::get('/equipement',[EquipementController::class,'all'])->name('equipement.all');
+
 });

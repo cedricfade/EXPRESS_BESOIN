@@ -16,7 +16,7 @@ class DashboardController extends Controller
 
 
         $sites = Site::where('user_id',auth()->user()->id)->get();
-        $sitee = Site::all();
+        $sites = Site::all();
         // $climatiseurs = climatiseur::where('user_id',auth()->user()->id)->get();
         $climatiseurs =climatiseur::where('user_id',auth()->user()->id)->get();
 
@@ -25,12 +25,11 @@ class DashboardController extends Controller
         $sitelampe = Sitelampes::where('user_id',auth()->user()->id)->get();
         $sitelampe = Sitelampes::all();
         // $climatiseurs = climatiseur::where('user_id',auth()->user()->id)->get();
-        $lampe =Lampe::all();
+        $lampe =lampe::all();
 
 
         return view('page.dashboard.all', compact('sites','climatiseurs','sitelampe','lampe'));
     }
-
 
 
 }

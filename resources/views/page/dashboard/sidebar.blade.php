@@ -11,7 +11,7 @@
     width: 20px
   }
 </style>
-   
+
    <nav id="sidebar" class="" style="">
         <!-- Sidebar Content -->
         <div class="sidebar-content">
@@ -133,7 +133,7 @@
 
                 <li class="nav-main-item">
                   <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#" style="background-color: #1d59a7; color:#fff">
-                  
+
                     <span class="nav-main-link-name">Ajouter Equipement</span>
                   </a>
 
