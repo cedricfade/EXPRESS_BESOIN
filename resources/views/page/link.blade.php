@@ -1,3 +1,7 @@
+  <!-- PWA  -->
+<meta name="theme-color" content="#6777ef"/>
+<link rel="apple-touch-icon" href="{{ asset('logo_lynays.png') }}">
+<link rel="manifest" href="{{ asset('/manifest.json') }}">
   <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/codebase.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
 <link href="https://cdn.jsdelivr.net/npm/sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
@@ -10,6 +14,7 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  
 @livewireStyles
 <style>
   body{
