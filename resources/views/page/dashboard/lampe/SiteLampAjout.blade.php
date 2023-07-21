@@ -109,7 +109,7 @@
                       </div>
 
                       <div class="form-floating mb-4">
-                        <input type="text" class="form-control" id="commune" name="commune" placeholder="Enter your username" style="text-transform: capitalize " value="{{ old('site') }}">
+                        <input type="text" class="form-control" id="commune" name="commune" placeholder="Enter your username" style="text-transform: capitalize " value="{{ old('commune') }}">
                         <label class="form-label" for="login-username" >Commune</label>
                         @error('commune')
                         <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>

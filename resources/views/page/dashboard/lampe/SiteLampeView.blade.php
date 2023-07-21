@@ -68,7 +68,7 @@
                     @foreach ($sitelampe as $sitelampe)
 
 
-                    <div class=" col-md-3 col-xl-3 pb-2 col-6 col-lg-3 col-sm-4 mx-auto ">
+                    <div class="  col-md-5 col-xl-5 pb-2 col-lg-5 col-sm-5 col-10 mx-auto ">
                         <a class="block block-rounded text-center" href="{{ route('lampe.ajout',['id'=>$sitelampe->id]) }}">
                           <div class="block-content block-content-full block-content-sm bg-primary">
                             <span class="fw-semibold text-white" style="text-transform: capitalize">{{ $sitelampe->libelle }}</span>

@@ -18,7 +18,14 @@
 @livewireStyles
 <style>
   body{
-    background: linear-gradient(30deg, rgb(218, 221, 224), rgba(241, 241, 241, 0.979));
+    background: linear-gradient(30deg, rgb(218, 221, 224), rgb(224, 217, 228));
+    
+  }
 
+  #main-container{
+    background-color: rgb(235, 235, 235)
+  }
+  #main-container h5,h4,h1,h2{
+    font-size: 18px
   }
  </style>

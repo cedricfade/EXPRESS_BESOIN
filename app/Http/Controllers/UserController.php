@@ -59,7 +59,7 @@ class UserController extends Controller
             'prenom'=>'required',
             'email'=>'required|unique:users,email',
             'contact'=>'required',
-            'password'=>'required|min:8',
+            'password'=>['required'],
             'password_confirmation'=>'required|same:password',
             'photo' => 'required|mimes:png,jpg,jpeg|image',
         

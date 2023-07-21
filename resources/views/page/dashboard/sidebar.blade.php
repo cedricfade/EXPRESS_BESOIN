@@ -139,12 +139,12 @@
 
                   <ul class="nav-main-submenu">
                     <li class="nav-main-item">
-                      <a class="nav-main-link" href="{{route('equipement.all')}}">
+                      <a class="nav-main-link" href="">
                         <span class="nav-main-link-name">Liste des sites</span>
                       </a>
                     </li>
                     <li class="nav-main-item">
-                      <a class="nav-main-link" href="{{route('equipement.ajout')}}">
+                      <a class="nav-main-link" href="{{route('site.equipement.ajout')}}">
                         <span class="nav-main-link-name">Ajouter nouveau</span>
                       </a>
                     </li>

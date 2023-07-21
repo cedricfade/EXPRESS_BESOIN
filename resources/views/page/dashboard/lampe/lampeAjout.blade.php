@@ -112,7 +112,7 @@
                   </div>
 
                   <div class="form-floating mb-4">
-                    <input type="name" class="form-control" id="login-password" name="watt" placeholder="l’énergie électrique" >
+                    <input type="text" class="form-control" id="login-password" name="watt" placeholder="l’énergie électrique" >
                     <label class="form-label" for="">puissance</label>
                     @error('watt')
                     <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>

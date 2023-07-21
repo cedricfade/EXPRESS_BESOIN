@@ -16,16 +16,16 @@ class DashboardController extends Controller
 
 
         $sites = Site::where('user_id',auth()->user()->id)->get();
-        $sites = Site::all();
-        // $climatiseurs = climatiseur::where('user_id',auth()->user()->id)->get();
+      
+       
         $climatiseurs =climatiseur::where('user_id',auth()->user()->id)->get();
 
 
 
         $sitelampe = Sitelampes::where('user_id',auth()->user()->id)->get();
-        $sitelampe = Sitelampes::all();
-        // $climatiseurs = climatiseur::where('user_id',auth()->user()->id)->get();
-        $lampe =lampe::all();
+
+        $lampe =Lampe::where('user_id',auth()->user()->id)->get();
+      
 
 
         return view('page.dashboard.all', compact('sites','climatiseurs','sitelampe','lampe'));

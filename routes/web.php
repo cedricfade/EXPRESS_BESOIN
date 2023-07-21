@@ -5,9 +5,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EquipementController;
 use App\Http\Controllers\SiteClimatiseurController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\SiteEquipementController;
 use App\Http\Controllers\SiteLampeController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\SiteClimatiseurList;
+use App\Models\SiteEquipement;
 use App\Models\User;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +28,15 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+//Lien des images créer
+// Route::get('storage-link', function(){
+//     $targetlink = storage_path('app/public');
+//     $folder = $_SERVER['DOCUMENT_ROOT'] .'/storage';
+//     symlink($targetlink,$folder);
+// });
+
+
 
 // Route::get('/',[UserController::class,'Inscription'])->name('inscription');
 Route::get('/',[UserController::class,'Login'])->name('login');
@@ -71,8 +82,16 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/equipement/ajout',[EquipementController::class,'equipementAjout'])->name('equipement.ajout');
-    Route::post('/equipement/ajout/traitement',[EquipementController::class,'equipement'])->name('equipement.ajout.traitement');
-    Route::get('/equipement',[EquipementController::class,'all'])->name('equipement.all');
+
+    Route::get('/site/equipement/new',[SiteEquipementController::class,'siteEquipementAjout'])->name('site.equipement.ajout');
+    Route::post('/site/equipement/traitement',[SiteEquipementController::class,'SiteEquipement'])->name('site.equipement.traitement');
+    Route::get('/site/equipement/view',[SiteEquipementController::class,'SiteEquipementView'])->name('site.equipement.view');
+
+    Route::get('/equipement/{id}',[SiteEquipementController::class,'Equipement'])->name('equipement.ajout');
+    Route::post('/equipement.action',[SiteEquipementController::class,'equipementAction'])->name('equipement.action');
+   
+    // Route::get('/equipement/ajout',[EquipementController::class,'equipementAjout'])->name('equipement.ajout');
+    // Route::post('/equipement/traitement',[EquipementController::class,'equipement'])->name('equipement.ajout.traitement');
+    // Route::get('/equipement',[EquipementController::class,'all'])->name('equipement.all');
 
 });

@@ -40,11 +40,12 @@
        transform: scale(1.1)
       }
 
-      .block .icone{
+      .block .icone img{
         background: rgb(255, 255, 255) !important;
         color: #01010a !important;
         border: 1px solid rgb(8, 70, 121);
 
+        width: 40px;
       border-radius: 50%;
       padding:5px
 
@@ -101,8 +102,8 @@
               <div class="col-12 col-xl-10 col-md-8 col-lg-8 col-sm-8">
                 <a class="block block-rounded block-link-shadow text-end" href="javascript:void(0)">
                   <div class="block-content block-content-full d-sm-flex justify-content-between align-items-center">
-                    <div class="d-none d-sm-block icone">
-                      <img src="{{ asset('assets/icone/broche-de-localisation.png') }}" alt="" style="width: 30px">
+                    <div class=" icone ">
+                      <img src="{{ asset('assets/icone/broche-de-localisation.png') }}" alt="">
                     </div>
                     <div>
                       <div class="fs-3 fw-semibold"> <span class="counter" style="font-size: 1.6em;">
@@ -118,8 +119,8 @@
               <div class="col-12 col-xl-10 col-md-8 col-lg-8 col-sm-8 ">
                 <a class="block block-rounded block-link-shadow text-end" href="javascript:void(0)">
                   <div class="block-content block-content-full d-sm-flex justify-content-between align-items-center">
-                    <div class="d-none d-sm-block icone">
-                      <img src="{{ asset('assets/icone/climatisation.png') }}" alt="" style="width: 30px">
+                    <div class="icone ">
+                      <img src="{{ asset('assets/icone/climatisation.png') }}" alt="">
                     </div>
                     <div>
                       <div class="fs-3 fw-semibold"> <span class="counter" style="font-size: 1.6em;">
@@ -134,8 +135,8 @@
               </div>
              </div>
 
-             <div class="col-1 col-lg-4">
-              <img src="{{ asset('assets/anim icon/clim.gif') }}" alt="" srcset="" style="width: 150px" class="mt-5">
+             <div class="col-1 col-lg-4 col-xl-4 col-md-4 col-sm-4">
+              <img src="{{ asset('assets/anim icon/clim.gif') }}" alt="" srcset="" style="" class="mt-xl-5 mt-sm-2 mt-sm-5 mt-lg-5">
              </div>
 
             </div>
@@ -152,8 +153,8 @@
               <div class="col-12 col-xl-10 col-md-8 col-lg-8 col-sm-8 ">
                 <a class="block block-rounded block-link-shadow text-end" href="javascript:void(0)">
                   <div class="block-content block-content-full d-sm-flex justify-content-between align-items-center">
-                    <div class="d-none d-sm-block icone">
-                      <img src="{{ asset('assets/icone/broche-de-localisation.png') }}" alt="" style="width: 30px">
+                    <div class="icone">
+                      <img src="{{ asset('assets/icone/broche-de-localisation.png') }}" alt="">
                     </div>
                     <div>
                       <div class="fs-3 fw-semibold"> <span class="counter" style="font-size: 1.6em;">
@@ -169,8 +170,8 @@
               <div class="col-12 col-xl-10 col-md-8 col-lg-8 col-sm-8 ">
                 <a class="block block-rounded block-link-shadow text-end" href="javascript:void(0)">
                   <div class="block-content block-content-full d-sm-flex justify-content-between align-items-center">
-                    <div class="d-none d-sm-block icone">
-                      <img src="{{ asset('assets/icone/ampoule.png') }}" alt="" style="width: 30px">
+                    <div class="icone">
+                      <img src="{{ asset('assets/icone/ampoule.png') }}" alt="">
                     </div>
                     <div>
                       <div class="fs-3 fw-semibold"> <span class="counter" style="font-size: 1.6em;">
@@ -186,7 +187,7 @@
              </div>
 
              <div class="col-1 col-lg-4">
-              <img src="{{ asset('assets/anim icon/lampe.gif') }}" alt="" srcset="" style="width: 140px" class="mt-5">
+              <img src="{{ asset('assets/anim icon/lampe.gif') }}" alt="" srcset="" style="width: 140px" class="mt-xl-5 mt-sm-2 mt-sm-5 mt-lg-5">
              </div>
 
             </div>

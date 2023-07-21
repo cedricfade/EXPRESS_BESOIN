@@ -77,7 +77,6 @@ return view('page.dashboard.lampe.lampeAjout',compact('sitelampe'));
         'marque' => 'required',
         'modele' => 'required',
         'type_lampe' => 'required',
-        'photo' => 'required',
     ]);
 
    if (isset($request->photo)) {

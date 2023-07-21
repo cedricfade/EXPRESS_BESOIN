@@ -77,7 +77,7 @@
 
                 <div class="form-floating mb-4">
                   <input type="text" class="form-control" id="login-username" name="marque" placeholder="Enter your username" value="{{old('marque')}}" style="text-transform:Capitalize">
-                  <label class="form-label" for="login-username">Marque</label>
+                  <label class="form-label" for="login-username">Entrez la marque</label>
                   @error('marque')
                   <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
@@ -108,7 +108,7 @@
 
 
                     </select>
-                    <label class="form-label" for="">Type de climatiseur</label>
+                    <label class="form-label" for="">Choisissez le climatiseur</label>
                     @error('type_climatiseur')
                     <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
@@ -142,8 +142,8 @@
 
                   <div class="form-floating mb-4 split-form">
 
-                    <select id="" class="form-control" name="type_split" value='{{ old('type_climatiseur') }}' style="text-transform:Capitalize; border:2px solid #2a1975">
-                        <option value="" selected hidden>Choisir</option>
+                    <select id="" class="form-control" name="type_split" style="text-transform:Capitalize; border:2px solid #2a1975">
+                        <option value="" selected hidden>Shoisir</option>
                         <option value="Split Mural">Split Mural</option>
                         <option value="Split Cassette">Split Cassette</option>
                         <option value="Split Armoire">Split Armoire</option>
@@ -151,7 +151,7 @@
 
 
                     </select>
-                    <label class="form-label" for="">Split</label>
+                    <label class="form-label" for="">Choisir le model du Split</label>
                     @error('type_split')
                     <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
@@ -161,8 +161,8 @@
                   </div>
 
                   <div class="form-floating mb-4">
-                    <input type="name" class="form-control" id="login-password" name="chevaux" placeholder="Enter your password" value="{{old('cheveaux')}}" style="text-transform:Capitalize">
-                    <label class="form-label" for="">Nombre de chevaux</label>
+                    <input type="text" class="form-control" id="login-password" name="chevaux" placeholder="Enter your password" value="{{old('cheveaux')}}" style="text-transform:Capitalize">
+                    <label class="form-label" for="">Entrez le nombre de chevaux</label>
                     @error('chevaux')
                     <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
@@ -173,7 +173,7 @@
 
                   <div class="form-floating mb-4">
                     <input type="file" class="form-control" id="login-password"  placeholder="Enter your password" name="photo">
-                    <label class="form-label" for="">Image étiquette</label>
+                    <label class="form-label" for="">Insérez ou prendre en photo l'étiquette</label>
                     @error('photo')
                     <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 

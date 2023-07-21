@@ -12,8 +12,13 @@
 </head>
 
 <style>
+
+  form input{
+
+    
+  }
   .content{
-    background: linear-gradient(20deg, #6055c5, #0f0846);
+    background: linear-gradient(26deg, #2a274b, #1e127e);
     border-radius: 3px;
   }
 
@@ -47,11 +52,11 @@
               </p>
             </div>
           </div>
-          <div class="hero-static col-md-6 col-xl-4 d-flex align-items-center bg-body-extra-light">
+          <div class="hero-static col-md-6 col-xl-4 col-12 d-flex align-items-center bg-body-extra-light">
             <div class="content content-full " style="">
 
               <!-- Header -->
-              <div class="px-4 py-2 mb-4 animate__animated animate__fadeInUp">
+              <div class="px-4  mb-4 animate__animated animate__fadeInUp">
                 <a class="link-fx fw-bold" href="">
              @if (session('login'))
 
@@ -66,7 +71,7 @@
 
                   <span class="fs-4 text-body-color  " style="color: rgb(26, 97, 179) !important">Lynays</span> <span class="fs-4">Entreprises</span>
                 </a>
-                <h1 class="h3 fw-bold mt-4 mb-2 animate__animated d-block" style="width: 50%; text-align: left">Connexion au Dashboard</h1>
+                <h1 class="h3 fw-bold mt-4 mb-2 animate__animated d-block" style="width:; text-align: left">Connexion au Dashboard</h1>
                 {{-- <h2 class="h5 fw-medium text-muted mb-0">Connectez-vous svp!</h2> --}}
                 @if (session('login_erreur'))
 
@@ -79,10 +84,10 @@
               <!-- Sign In Form -->
               <!-- jQuery Validation functionality is initialized with .js-validation-signin class in js/pages/op_auth_signin.min.js which was auto compiled from _js/pages/op_auth_signin.js -->
               <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
-              <form class="js-validation-signin px-4 animate__animated animate__fadeInUp" action="{{ route('login.create') }}" method="POST">
+              <form class="js-validation-signin  animate__animated animate__fadeInUp" action="{{ route('login.create') }}" method="POST">
                 @csrf
-                <div class="form-floating mb-4">
-                  <input type="text" class="form-control" id="login-username" name="email" placeholder="Enter your username" required>
+                <div class="form-floating mb-4 p-1">
+                  <input type="email" class="form-control" id="login-username" name="email" placeholder="Enter your username" required>
                   <label class="form-label" for="login-username">Email</label>
                 </div>
                 <div class="form-floating mb-4">
