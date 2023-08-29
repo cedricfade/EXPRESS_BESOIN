@@ -95,7 +95,7 @@ class UserController extends Controller
       $user->photo = $path;
       $user->status = 1;
 
-      $user->save();
+      $user->save();    
     //    dd( $user);
 
     return redirect()->route('login')->with('login','Compte créer avec succès');

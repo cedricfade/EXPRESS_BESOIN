@@ -70,7 +70,7 @@
             <div class="form animate__animated ">
                 <div class="form-floating mb-4" hidden>
                     <input type="text" class="form-control" id="login-username" name="site_equipement_id" placeholder="Enter your username" value="{{$SiteEquipement->id }}" hidden>
-                    <label class="form-label" for="login-username">sitelampe_id</label>
+                    <label class="form-label" for="login-username"></label>
 
                   </div>
                
@@ -78,7 +78,7 @@
                   <div class="form-floating mb-4">
                     <input type="text" class="form-control" id="login-username" name="type_appareil" placeholder="Enter your username" >
                     <label class="form-label" for="login-username">Entrez le type de l'appareil</label>
-                    @error('marque')
+                    @error('type_appareil')
                     <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
   
                     @enderror
@@ -98,9 +98,9 @@
      
 
                   <div class="form-floating mb-4">
-                    <input type="name" class="form-control" id="login-password" name="watt" placeholder="l’énergie électrique" >
-                    <label class="form-label" for="">Entrez la puissance <sub>(WATT)</sub></label>
-                    @error('watt')
+                    <input type="name" class="form-control" id="login-password" name="puissance" placeholder="l’énergie électrique" >
+                    <label class="form-label" for="">Entrez la puissance</label>
+                    @error('puissance')
                     <span style="color:rgb(128, 14, 14); font-size: 13px;">{{ $message }}</span> <br>
 
 

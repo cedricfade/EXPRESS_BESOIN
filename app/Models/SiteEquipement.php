@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class SiteEquipement extends Model
 {
     use HasFactory;
+
+
+    public function user(){
+
+        return $this->belongsTo(User::class);
+    }
+
+    public function equipement(){
+
+        return $this->hasMany(Equipement::class);
+    }
+
+
+
 }

@@ -8,8 +8,9 @@
         });
     }
 </script>
+
 <script src="{{ asset('assets/js.js') }}"></script>
-  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
 <script src="{{ asset('assets/js/codebase.app.min.js') }}"></script>
 
 <!-- Page JS Plugins -->
@@ -25,12 +26,14 @@
 <script src="{{ asset('assets/js/pages/op_auth_signup.min.js') }}"></script>
 
 {{-- DATA TABLE --}}
-<script src="{{ asset('assets/datatable/jquery-3.5.1.js') }}"></script>
+{{-- <script src="{{ asset('assets/datatable/jquery-3.5.1.js') }}"></script>
 <script src="{{ asset('assets/datatable/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('assets/datatable/dataTables.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('assets/datatable/dataTables.bootstrap5.min.js') }}"></script> --}}
+
+
 
 <script>
-  $('#example').DataTable();
+  $('.js-dataTable-full').DataTable();
 </script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -47,3 +50,12 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js  "></script>
+
+<script src="{{ asset('assets/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/datatables-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/datatables-responsive-bs5/js/responsive.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/datatables-buttons/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/datatables-buttons-bs5/js/buttons.bootstrap5.min.js') }}"></script>
+
+<script src="{{ asset('assets/js/pages/be_tables_datatables.min.js') }}"></script>

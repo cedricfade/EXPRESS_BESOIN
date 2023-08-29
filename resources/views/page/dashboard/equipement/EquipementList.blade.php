@@ -91,12 +91,12 @@
                 </thead>
                 <tbody>
                   
-               @forelse ($sitelampes as $sitelampe)
+               @forelse ($siteequipements as $siteequipement)
                <tr>  
-                <td class="text-center fw-semibold">{{$sitelampe->libelle }}</td>
-                    <td class="fw-semibold d-none d-sm-table-cell">{{$sitelampe->ville }}</td>
-                    <td class="d-none d-sm-table-cell">{{$sitelampe->commune }}</td>
-                    <td class="text-center ">{{ $sitelampe->lampe->count()}}</td>
+                <td class="text-center fw-semibold">{{$siteequipement->libelle }}</td>
+                    <td class="fw-semibold d-none d-sm-table-cell">{{$siteequipement->ville }}</td>
+                    <td class="d-none d-sm-table-cell">{{$siteequipement->commune }}</td>
+                    <td class="text-center ">{{ $siteequipement->equipement->count()}}</td>
                     {{-- <td class="d-none d-sm-table-cell">
                       <span class="badge bg-success">
                         <a href="{{ route('climatiseur.infos',['id'=>$site->id,'libelle'=>Str::slug($site->libelle)]) }}">Voir <i class="fa fa-eye"></i></a>
@@ -104,7 +104,7 @@
                     </td> --}}
                     <td class="text-center d-sm-table-cell">
                     
-                      <a href="{{ route('lampe.infos',['id'=>$sitelampe->id,'libelle'=>Str::slug($sitelampe->libelle)]) }}" type="button" class="btn btn-sm btn-secondary" data-bs-toggle="tooltip" title="Voir le site"><i class="fa fa-eye"></i></a>
+                      <a href="{{ route('equipement.infos',['id'=>$siteequipement->id,'libelle'=>Str::slug($siteequipement->libelle)]) }}" type="button" class="btn btn-sm btn-secondary" data-bs-toggle="tooltip" title="Voir le site"><i class="fa fa-eye"></i></a>
                     </td>
                     @empty
                     pas de donnée

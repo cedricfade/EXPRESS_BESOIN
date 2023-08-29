@@ -87,8 +87,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/site/equipement/traitement',[SiteEquipementController::class,'SiteEquipement'])->name('site.equipement.traitement');
     Route::get('/site/equipement/view',[SiteEquipementController::class,'SiteEquipementView'])->name('site.equipement.view');
 
+    Route::get('/site/equipement/liste',[SiteEquipementController::class,'SiteEquipementList'])->name('site.equipement.list');
+
     Route::get('/equipement/{id}',[SiteEquipementController::class,'Equipement'])->name('equipement.ajout');
     Route::post('/equipement.action',[SiteEquipementController::class,'equipementAction'])->name('equipement.action');
+    Route::get('/equipement/infos/{id}/{libelle}',[SiteEquipementController::class,'equipementinfos'])->name('equipement.infos');
    
     // Route::get('/equipement/ajout',[EquipementController::class,'equipementAjout'])->name('equipement.ajout');
     // Route::post('/equipement/traitement',[EquipementController::class,'equipement'])->name('equipement.ajout.traitement');

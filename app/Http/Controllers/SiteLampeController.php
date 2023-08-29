@@ -119,4 +119,6 @@ public function lampeInfos($id){
     return view('page.dashboard.lampe.lampeInfos',compact('sitelampe','lampes'));
 
 }
+
+
 }

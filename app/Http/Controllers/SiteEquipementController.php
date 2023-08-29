@@ -53,7 +53,7 @@ class SiteEquipementController extends Controller
       
 
         public function SiteEquipementView(){
-        $siteequipements = SiteEquipement::where('user_id',auth()->user()->id)->get()->sortDesc();
+        $siteequipements = SiteEquipement::where('user_id',auth()->user()->id)->orderBy('id','desc')->limit(1)->get();
         $lampe = Equipement::all();
 
      
@@ -80,16 +80,15 @@ class SiteEquipementController extends Controller
 
     $this->validate($request,[
         'photo' => 'mimes:png,jpg,jpeg',
-        'watt' => 'required|numeric',
+        'type_appareil' =>'required',
         'marque' => 'required',
-        'modele' => 'required',
-        'type_lampe' => 'required',
+        'puissance' => 'required|numeric',
     ]);
 
    if (isset($request->photo)) {
     $filename = time().'.'. $request->photo->extension();
       // Pour enregistré un fichier depuis request
-   $path =  $request->file('photo')->storeAs('photo_lampe',$filename,'public');
+   $path =  $request->file('photo')->storeAs('photo_equipement',$filename,'public');
    }
 
 
@@ -99,12 +98,10 @@ class SiteEquipementController extends Controller
 
 
     $equipement->user_id = auth()->user()->id;
-    $equipement->sitelampe_id  = $request->sitelampe_id;
     $equipement->site_equipement_id  = $request->site_equipement_id;
     $equipement->type_appareil = $request->type_appareil;
     $equipement->marque = $request->marque;
     $equipement->puissance = $request->puissance;
-    $equipement->sommes_watt = $request->watt;
     $equipement->photo = $path;
 //    dd($climatiseur);
 
@@ -120,7 +117,25 @@ $equipement->save();
 }
 
 
+public function SiteEquipementList(){
 
+
+    $siteequipements = SiteEquipement::where('user_id', auth()->user()->id)->get()->sortDesc();
+    
+    return view('page.dashboard.equipement.EquipementList',compact('siteequipements'));
+
+
+}
+
+
+public function equipementinfos($id){
+
+    
+    $siteequipements = SiteEquipement::findOrFail($id);
+    $equipements = Equipement::where('site_equipement_id',$siteequipements->id)->get();
+
+    return view('page.dashboard.equipement.EquipementInfos', compact('equipements','siteequipements'));
+}
 
 
 

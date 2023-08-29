@@ -57,7 +57,7 @@
           <div class="row">
             <!-- Row #1 -->
             <div class="col-6 col-xl-3">
-              <h1>LISTE DES SITES</h1>
+              <h1></h1>
             </div>
 
             
@@ -66,58 +66,59 @@
 
 
 
+          <div class="block block-rounded">
+            <div class="block-header block-header-default">
+              <h3 class="block-title">
+                Liste des sites
+              </h3>
+            </div>
+            <div class="block-content block-content-full">
+              <!-- DataTables functionality is initialized with .js-dataTable-full class in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
+              <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+                <thead>
+                  <tr>
+       
+                    <th>Site</th>
+                    <th class="d-none d-sm-table-cell">Ville</th>
+                    <th class="d-none d-sm-table-cell" style="width: 15%;">Commune</th>
+                    <th class="text-center" style="width: 15%;">Nombre de climatiseur</th>
+                    <th class="text-center" style="width: 15%;">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+               @forelse ($sites as $site)
+               <tr>  
+                <td class="text-center fw-semibold">{{$site->libelle }}</td>
+                    <td class="fw-semibold d-none d-sm-table-cell">{{$site->ville }}</td>
+                    <td class="d-none d-sm-table-cell">{{$site->commune }}</td>
+                    <td class="text-center ">{{ $site->climatiseur->count()}}</td>
+                    {{-- <td class="d-none d-sm-table-cell">
+                      <span class="badge bg-success">
+                        <a href="{{ route('climatiseur.infos',['id'=>$site->id,'libelle'=>Str::slug($site->libelle)]) }}">Voir <i class="fa fa-eye"></i></a>
+                      </span>
+                    </td> --}}
+                    <td class="text-center d-sm-table-cell">
+                    
+                      <a href="{{ route('climatiseur.infos',['id'=>$site->id,'libelle'=>Str::slug($site->libelle)]) }}" type="button" class="btn btn-sm btn-secondary" data-bs-toggle="tooltip" title="Voir le site"><i class="fa fa-eye"></i></a>
+                    </td>
+                    @empty
+                    pas de donnée
+                  </tr>
+                    @endforelse
+
+                
+                 
+      
+                
+                </tbody>
+              </table>
+            </div>
+          </div>
 
 
 
-
-          <table id="example" class="table table-striped" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Libelle</th>
-                    <th>Ville</th>
-                    <th>Commune</th>
-                    <th>Nombre climatiseur</th>
-                    <th>Action</th>
-
-                </tr>
-            </thead>
-            <tbody>
-          
-
-
-              @foreach ($sites as $site)
-
-              <tr>
-                <td style="text-transform: uppercase">{{$site->libelle }}</td>
-                <td style="text-transform: uppercase">{{ $site->ville }}</td>
-                <td style="text-transform: uppercase">{{ $site->commune }}</td>
-                <td>
-                  {{ $site->climatiseur->count()}}
-
-                </td>
-                <td>
-                    <a href="{{ route('climatiseur.infos',['id'=>$site->id,'libelle'=>Str::slug($site->libelle)]) }}">Voir <i class="fa fa-eye"></i></a>
-                </td>
-
-            </tr>
-
-
-              @endforeach
-
-
-            </tbody>
-            <tfoot>
-                <tr>
-                  <th>Libelle</th>
-                  <th>Ville</th>
-                  <th>Commune</th>
-                  <th>Nombre climatiseur</th>
-
-                </tr>
-            </tfoot>
-        </table>
-
-
+         
 
 
         </div>
@@ -140,9 +141,7 @@
         Core libraries and functionality
         webpack is putting everything together at assets/_js/main/app.js
     -->
-
-
-@include('page.script')
+   @include('page.script')
 
 
   </body>
