@@ -103,7 +103,7 @@
                       <a href="{{ route('climatiseur.infos',['id'=>$site->id,'libelle'=>Str::slug($site->libelle)]) }}" type="button" class="btn btn-sm btn-secondary" data-bs-toggle="tooltip" title="Voir le site"><i class="fa fa-eye"></i></a>
                     </td>
                     @empty
-                    pas de donnée
+                    Pas de donnée
                   </tr>
                     @endforelse
 
